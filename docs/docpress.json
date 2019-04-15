@@ -1,0 +1,16 @@
+{
+  "css": [
+    "http://ricostacruz.com/docpress-rsc/style.css",
+    "https://raw.githubusercontent.com/docpress/docpress/master/docs/assets/custom.css"
+  ],
+  "markdown": {
+    "typographer": true,
+    "plugins": {
+      "decorate": {}
+    }
+  },
+  "plugins": {
+    "docpress-core": {},
+    "docpress-base": {}
+  }
+}
