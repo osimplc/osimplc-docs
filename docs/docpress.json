@@ -6,7 +6,8 @@
   "markdown": {
     "typographer": true,
     "plugins": {
-      "decorate": {}
+      "decorate": {},
+      "include": "docs"
     }
   },
   "plugins": {

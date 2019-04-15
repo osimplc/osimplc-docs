@@ -11,9 +11,8 @@
   * [LDmicro](es/07-ldmicro.md)
   * [Otros](es/08-otherlangs.md)
 
-* [How To](downloads.md)
-
-* Manuales 
+* Manuales - How to...?
   * [LDmicro](es/LDmicro_manual.md)
   * [OBootLin](es/OBootLin_manual.md)
   * [Descargas](downloads.md)
+
