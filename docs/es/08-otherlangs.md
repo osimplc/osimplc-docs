@@ -2,7 +2,7 @@
 
 ## Lenguaje BASIC
 
-Great Cow BASIC (GCB), licencia GPLv2, LGPLv2.(link)
+[Great Cow BASIC (GCB)](http://gcbasic.sourceforge.net/), licencia GPLv2, LGPLv2.
 
 > "Great Cow BASIC tiene tres objetivos principales: eliminar la necesidad de repetitivos
 >comandos en Assembler, producir código eficiente, y facilitar tomar el código escrito para un
@@ -25,7 +25,7 @@ BASIC, y del programa y sus bibliotecas.
 
 ## Lenguaje C
 
-Small Device C Compiler (SDCC), licencia GPLv2 o GPLv3, + IDE.(link)
+[Small Device C Compiler (SDCC)](http://sdcc.sourceforge.net/), licencia GPLv2 o GPLv3, + IDE.
 
 > "SDCC es un compilador optimizador del Estándar C (ANSI C89, ISO C99, ISO C11) que se
 > enfoca en los microprocesadores basados en Intel MCS51, Maxim DS80C390, Freescale

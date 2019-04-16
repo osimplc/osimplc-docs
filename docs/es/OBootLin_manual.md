@@ -13,7 +13,7 @@ Estos firmwares son totalmente compatibles con otros softwares libres y privativ
 
 ### Descargar OBootLin:
 
-Desde [OSIMPLC página Descargas](http://www.osimplc.com/Downloads/), descargue el archivo OBootLin.zip
+Desde [OSIMPLC página Descargas](http://osimplc.com/Downloads), descargue el archivo OBootLin.zip
 
 ### Dependencias requeridas
 
@@ -86,9 +86,11 @@ En la sección de configuración de OBootLin (izquierda abajo), configurar:
 1. En la sección de comando de OBootLin (izquierda arriba), presionar el botón CheckPIC y mientras la barra de progreso está avanzando (timeout), en OSIMPLC presionar y soltar inmediatamente el botón RESET.
 
 2. Si la operación resulta existosa, la pestaña Messages mostrará:
- >Connected to /dev/ttyUSB0 at 19200
+```
+  Connected to /dev/ttyUSB0 at 19200
   Searching for PIC ...
   Found:16F 886/887 [18F 452o]
+```
 
 3. En caso de error, mostrará el mensaje: "Could not connect to ttyUSB0 at 19200 ERROR!" si no puede establecer la comunicación con el cable de programación o adaptador USB-TTL;
 o el mensaje: "Connected to /dev/ttyUSB0 at 19200 Searching for PIC... Not found ERROR!" si OSIMPLC no tiene alimentación, se encuentra aún reseteado o existe algún otro inconveniente.
@@ -100,11 +102,13 @@ o el mensaje: "Connected to /dev/ttyUSB0 at 19200 Searching for PIC... Not found
 2. En la sección de comando de OBootLin (izquierda arriba) presionar el botón Write Flash, y mientras la barra de progreso está avanzando (timeout), en OSIMPLC presionar y soltar inmediatamente el botón RESET.
 
 3. Si la operación resulta exitosa, la pestaña Messages mostrará:
- >Connected to /dev/ttyUSB0 at 19200
+```
+  Connected to /dev/ttyUSB0 at 19200
   HEX:xx days old,INX32M,16Fcode+cfg,total=xxxx bytes.
   Searching for PIC ...
   Found:16F 886/887
   Write OK at hh:mm time: x.xxx sec
+```
 
 4. En caso de error, mostrará el mensaje: "Could not connect to ttyUSB0 at 19200 ERROR!" si no puede establecer la comunicación con el cable de programación o adaptador USB-TTL;
 o el mensaje: "Connected to /dev/ttyUSB0 at 19200 HEX:xx days old,INX32M,16Fcode+cfg,total=xxx bytes.  Searching for PIC ...Not found", si OSIMPLC no tiene alimentación, se encuentra aún reseteado o existe algún otro inconveniente.
@@ -116,7 +120,7 @@ Para efectuar la comunicación entre OSIMPLC y la PC, puede utilizarse el cable 
 
 1. En la pestaña Terminal: seleccionar la velocidad de transmisión (baudrate) utilizando la lista desplegable.
 
->NOTA: la velocidad de transmisión (baudrate) de datos mediante UART en el programa de usuario puede ser diferente de la velocidad utilizada por OSIMPLC para programación y comprobación (19200), y debe ser definida en el menú MCU parameters de LDmicro (o en el menú/configuración correspondiente en otros softwares).
+> **NOTA**: la velocidad de transmisión (baudrate) de datos mediante UART en el programa de usuario puede ser diferente de la velocidad utilizada por OSIMPLC para programación y comprobación (19200), y debe ser definida en el menú MCU parameters de LDmicro (o en el menú/configuración correspondiente en otros softwares).
 
 2. Iniciar la comunicación: presionar el botón Open.
 
@@ -141,7 +145,7 @@ Otros modos de datos (char\, Type, TypEcho) pueden ser también utilizados.
 
 ### OBootLin
 
-www.osimplc.com/Downloads/
+http://www.osimplc.com/downloads
 
 Este código derivado es una versión ligeramente modificada de Tiny Pic Bootloader for GNU/Linux, Luis Claudio Gamboa fork.
 
@@ -165,7 +169,8 @@ El software Tiny Pic Bootloader for GNU/Linux original fue escrito por Fernando 
 Tiny Pic Bootloader for GNU/Linux es licenciado bajo GPL v2.
 
 TinybldLin fue escrito en python2 utilizando los módulos python-serial y wxphython; puede ser ejecutado en cualquier distribución GNU/Linux (y quizás mac) que tenga instaladas dichas dependencias.
-"Esta versión pretende ser más que un clon del tinybldWin.exe original; pretende, en el futuro, agregar nuevas características y mejorar las existentes en el original."
+
+> "Esta versión pretende ser más que un clon del tinybldWin.exe original; pretende, en el futuro, agregar nuevas características y mejorar las existentes en el original."
 
 Última versión: tinybldlin-0.8.1-src.tar.gz, 15 Noviembre 2012.
 
@@ -180,15 +185,5 @@ Los firmwares de tinybld son los bootloaders más pequeños disponibles para PIC
 Tiny Pic Bootloader for Windows es un programa gratuito (freeware), pero no tiene una licencia de software libre, ni está disponible su código fuente.
 
 Última versión: TinyBld-1_10_6_pc_beta.zip, 18 Junio 2011.
-
-
-
-
-
-
-
-
-
-
 
 

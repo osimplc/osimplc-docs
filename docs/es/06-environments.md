@@ -8,6 +8,7 @@ OSIMPLC requiere dos entornos diferentes para su utilización:
 procederá a su compilación en código máquina (archivo .hex).
 2. Entorno de transferencia, que efectúa la descarga en el microcontrolador del código máquina
 compilado por el entorno de programación.
+
 OSIMPLC puede ser programado bajo cualquier software que soporte los microcontroladores
 PIC16F887 (estándar) y/o PIC18F4520 (alternativo), y genere códico máquina en archivos .hex
 (I8HEX).
@@ -58,17 +59,18 @@ cristal oscilador de 20 MHz y norma de comunicación serial 19200-8N1.
 
 #### Software para Windows
 
-Tiny Multi Bootlader+: Licencia Creative Commons Attribute - No Comercial (CC BY-NC) (link).
+[Tiny Multi Bootlader+](http://tinypicbootload.sourceforge.net/): Licencia Creative Commons Attribute - No Comercial (CC BY-NC)
 
 Este software permite la descarga del código máquina en diversas líneas de
-microcontroladores. Lea las instrucciones de instalación y uso en su sitio web. (link)
+microcontroladores. Lea las instrucciones de instalación y uso en su sitio web.
 
 #### Firmware
 
 Los firmwares de Tiny PIC Bootloader para PIC16F887y PIC18F4520, pre-instalados en los
 microcontroladores de OSIMPLC, han sido modificados para su compatibilidad con cristal
 oscilador de 20 MHz y norma de comunicación serial 19200-8N1.
-Hardware:
+
+#### Hardware 
 
 El proyecto OSIMPLC provee un cable de programación que incluye el conversor USB-TTL
 basado en chipset CH340 ó CH341, y un terminal zócalo hembra ya dispuesto para conexión
@@ -94,8 +96,7 @@ con el pin-out adecuado.
 El software de USBPICPROG se distribuye con licencia GPLv2, puede descargarse el código
 fuente para GNU/Linux, e instaladores para la distribución Ubuntu, Windows y MacOSX.
 
-Para la distribución Arch Linux, está disponible en AUR el PKGBUILD que permite la
-compilación de USBPICPROG, escrito por propio desarrollador de OSIMPLC.(link)
+Para la distribución Arch Linux, [está disponible en AUR el PKGBUILD que permite la compilación de USBPICPROG](https://aur.archlinux.org/packages/usbpicprog/), escrito por propio desarrollador de OSIMPLC.
 
 USBPICPROG dispone de una versión de hardware basada en circuito impreso doble capa y
 agujero pasante (Two Layer Through Hole PCB), y componentes electrónicos estándar

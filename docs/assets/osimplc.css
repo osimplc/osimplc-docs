@@ -8,3 +8,35 @@
   padding: 20px 10px 10px 20px;
   font-size: 18px;
 }
+
+.search-input {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+}
+
+.results-panel.show {
+  padding: 40px 10px 20px 10px;
+  background-color: white;
+  border-left: 1px solid gray;
+  width: 35vw;
+  height: 100vh;
+  float: right;
+  overflow: scroll;
+  box-shadow: -5px 5px 15px #25a;
+}
+
+.results-panel h2 {
+  font-size: 22px;
+}
+
+.results-panel a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #1abc9c;
+}
+.results-panel a:visited {
+  font-weight: 700;
+  color: #1a60bc;
+}

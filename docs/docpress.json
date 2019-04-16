@@ -1,8 +1,11 @@
 {
   "css": [
-    "http://ricostacruz.com/docpress-rsc/style.css",
-    "https://raw.githubusercontent.com/docpress/docpress/master/docs/assets/custom.css",
+    "assets/ricostacruz-styles.css",
+    "assets/docpress-custom.css",
     "assets/osimplc.css"
+  ],
+  "scripts": [
+    "assets/initSearch.js"
   ],
   "markdown": {
     "typographer": true,
@@ -21,7 +24,7 @@
   },
   "plugins": {
     "docpress-core": {},
-    "docpress-search": {},
+    "docpress-simple-search": {},
     "docpress-base": {}
   }
 }

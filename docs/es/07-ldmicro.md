@@ -67,7 +67,7 @@ derivada, también para un microcontrolador STM32F40X ARM de 32 bits.
 Además, LDmicro permite generar código en Assembler, C, PASCAL, Interpretable Byte Code,
 Sketch para Arduino.
 
-### Simulación
+## Simulación
 
 LDmicro habilita la simulación de la ejecución del programa de aplicación en la PC, sin
 necesidad de compilar y descargar el código máquina en el microcontrolador, facilitando así la
@@ -100,6 +100,7 @@ aplicaciones.
 LDmicro es actualmente mantenido por Ihor Nehrutsa, quien ha agregado soporte para nuevos
 microcontroladores PIC y AVR Atmega, e implementaciones como Arduino y Controllino Maxi,
 además de muchas nuevas funciones en Ladder y características avanzadas.
+
 El desarrollo de LDmicro se realiza actualmente en el sitio https://github.com/LDmicro/LDmicro ;
 la descarga del código fuente y los ejecutables puede hacerse desde https://github.com/LDmicro/LDmicro/releases
 
@@ -151,7 +152,7 @@ distribución.
 wine por defecto:
 `$ WINEARCH=win32 winecfg`
 Será creado el directorio `/home/$USER/.wine` , conteniendo dos subdirectorios:
-/dosdevices (links a dispositivos) y /drive_c (ejecutables de wine, programas,
+`/dosdevices` (links a dispositivos) y `/drive_c` (ejecutables de wine, programas,
 configuraciones, etc. etc.).
 5. Descargue el archivo .zip de la versión de LDmicro de su preferencia y
 descomprímalo en una carpeta de su directorio personal.
@@ -173,8 +174,7 @@ Icon=/ruta/al/archivo/ldmicro.png (creado o seleccionado por el usuario)
 
 ## DESCARGA
 
-La descarga de la versión recomendada de LDmicro está directamente disponible [desde el sitio
-web de OSIMPLC](http://osimplc.com/downloads), es aquella que a nuestro entender brinda mayor estabilidad y mejores
+La descarga de la versión recomendada de LDmicro está directamente disponible [desde el sitio web de OSIMPLC](http://osimplc.com/downloads), es aquella que a nuestro entender brinda mayor estabilidad y mejores
 prestaciones (instrucciones integradas, organización de menús, etc.).
 
 Sin embargo, el usuario puede optar por utilizar cualquiera de las otras versiones
@@ -192,7 +192,7 @@ RENUNCIA DE GARANTIA Y LIMITACION DE RESPONSABILIDAD
 LDmicro es software libre bajo licencia GPLv3, por lo que en lo referido a garantía y
 responsabilidad legal se aplican todas las consideraciones de dicha licencia.
 
-Además, de acuerdo a lo declarado por su desarrollador Jonathan Westhues: "no use LDmicro
+Además, de acuerdo a lo declarado por su desarrollador Jonathan Westhues: "**no** use LDmicro
 para nada que sea crítico para la seguridad, o algo que rompa cualquier cosa cara si fallara".
 
 Por supuesto, **NO** debe utilizar LDmicro en conjunto con OSIMPLC en ningún caso en que

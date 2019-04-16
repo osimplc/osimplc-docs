@@ -2,6 +2,7 @@
 
 Los módulos de expansión a bordo permiten agregar más entradas y salidas al sistema,
 llegando hasta configuraciones de 18E/12S, 16E/14S ó 14E/16S (30 puntos).
+
 La mayoría de los módulos reciben alimentación desde el módulo MCU, con excepciones en
 ciertos módulos especializados.
 
@@ -65,7 +66,7 @@ están invertidas respecto a la detección del líquido.
 Cuatro (4) salidas a transistor NPN colector abierto, Umax: 24 Vcc; Imax: 200 mA carga
 resistiva, 100 mA carga inductiva, señalizadas por LEDs (ver Nota).
 
-![E4TI](../images/e4ti.png)
+![E4TI](../images/e4do.png)
 
 
 ## MÓDULOS MIXTOS DE ENTRADAS Y SALIDAS

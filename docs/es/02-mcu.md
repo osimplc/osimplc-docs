@@ -50,6 +50,8 @@ de ellas configurable como digital optoacoplada ó como PWM no aislada por medio
 jumpers, con conectores para los módulos especializados de salidas (tres grupos de
 cuatro salidas); señalizadas por LEDs.
 
+> IMAGE?
+
 ## Expansión
 
 Dos (2) conectores para módulos de expansión; uno para módulos a bordo (expansiones

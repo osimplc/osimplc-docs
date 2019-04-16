@@ -70,7 +70,7 @@ El sistema OSIMPLC está basado en módulos que permiten configurarlo de acuerdo
 tareas a automatizar, y a las señales de sensores y actuadores requeridas para cada
 aplicación específica.
 
-El módulo central MCU contiene a bordo el microcontrolador (en dos versiones); doce (12)
+El módulo central [MCU](02-mcu.md) contiene a bordo el microcontrolador (en dos versiones); doce (12)
 entradas digitales; doce (12) salidas digitales por optoacoplador (una de ellas configurable
 como PWM); dos (2) entradas analógicas configurables; puerto RS-485; conector UART-
 TTL; conector ICSP; conectores para módulos de expansión; entrada de alimentación y
@@ -80,6 +80,7 @@ Los diferentes módulos de salidas (cada uno de ellos con cuatro puntos) pueden 
 fácilmente acoplados al módulo MCU, ofreciendo distintas combinaciones: relés;
 transistores de potencia; mixto relés/transistor más salida analógica; directas a
 optoacopladores más salida analógica (dedicado a variadores de frecuencia).
+
 Los módulos de expansión a bordo agregan cuatro señales más, pudiéndose alcanzar
 configuraciones máximas de hasta 30 Entradas/Salidas.
 
@@ -87,17 +88,17 @@ OSIMPLC dispone actualmente de ocho (8) diferentes módulos de expansión con di
 configuraciones de E/S, algunos de ellos diseñados para resolver aplicaciones específicas
 (detección de líquidos conductivos, sensado de temperaturas).
 
-El módulo HMI ofrece una interfaz hombre/máquina simplificada; permite mostrar
+El [módulo HMI](05-hmi.md) ofrece una interfaz hombre/máquina simplificada; permite mostrar
 mensajes de texto, variables, efectuar cambio de parámetros, facilitando la interacción del
 usuario con el automatismo.
 
 ## Programmable Logic Controller
 
-OSIMPLC puede ser fácilmente programado en lenguaje **Ladder (IEC 61131-3)**, mediante
-LDmicro, software libre con licencia GPLv3. Ladder es el lenguaje utilizado más
+OSIMPLC puede ser fácilmente programado en lenguaje Ladder (IEC 61131-3), mediante
+[LDmicro](07-ldmicro.md), software libre con licencia GPLv3. Ladder es el lenguaje utilizado más
 habitualmente para la programación de PLCs industriales.
 
-OSIMPLC también puede ser programado bajo otros lenguajes no incluídos bajo las
+OSIMPLC también puede ser programado bajo [otros lenguajes](08-otherlangs.md) no incluídos bajo las
 normativas IEC 61131-3, como BASIC, C, Assembler, utilizando software libre con licencia
 GPL o compatible: GreatCowBASIC, SDCC + IDE, gputils + editor, u otros.
 
@@ -122,6 +123,7 @@ complejos, que incluyan sensores industriales, elementos de maniobra habituales 
 electromecánicos y de estado sólido, contactores, variadores de frecuencia, arrancadores
 suaves), y los más diversos tipos de accionamientos (motores y motorreductores eléctricos,
 electroválvulas y actuadores neumáticos y oleohidráulicos, resistencias calefactoras, etc. etc.).
+
 De este modo, los educandos pueden integrar y articular la teoría y la práctica, posibilitando
 una mejor transferencia de lo aprendido a diferentes contextos y situaciones de la actividad
 productiva real.

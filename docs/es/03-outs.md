@@ -7,7 +7,7 @@ Dichas salidas son aptas para comandar actuadores o equipamientos de maniobra in
 que funcionen sólo bajo tensión de seguridad (24V), no estando permitido conectar elementos
 que trabajen en tensión de red.
 
-OSIMPLC MCU dispone de tres puertos, Y0-Y3, Y4-Y7 y Y8-YB/PWM, para conexión directa
+OSIMPLC [MCU](02-mcu.md) dispone de tres puertos, Y0-Y3, Y4-Y7 y Y8-YB/PWM, para conexión directa
 de los módulos de salidas; algunos de éstos (sólo con salidas digitales) pueden ser conectados
 indistintamente a cualquiera de los tres puertos, mientras que otros módulos (con salida
 analógica o PWM) sólo pueden ser conectados al puerto Y8-YB/PWM.
