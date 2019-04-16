@@ -115,16 +115,19 @@ o el mensaje: "Connected to /dev/ttyUSB0 at 19200 HEX:xx days old,INX32M,16Fcode
 Para efectuar la comunicación entre OSIMPLC y la PC, puede utilizarse el cable de programación, un adaptador USB-TTL o un adaptador USB-RS485.**
 
 1. En la pestaña Terminal: seleccionar la velocidad de transmisión (baudrate) utilizando la lista desplegable.
-NOTA: la velocidad de transmisión (baudrate) de datos mediante UART en el programa de usuario puede ser diferente de la velocidad utilizada por OSIMPLC para programación y comprobación (19200), y debe ser definida en el menú MCU parameters de LDmicro (o en el menú/configuración correspondiente en otros softwares).
+
+>NOTA: la velocidad de transmisión (baudrate) de datos mediante UART en el programa de usuario puede ser diferente de la velocidad utilizada por OSIMPLC para programación y comprobación (19200), y debe ser definida en el menú MCU parameters de LDmicro (o en el menú/configuración correspondiente en otros softwares).
 
 2. Iniciar la comunicación: presionar el botón Open.
 
 3. Recibir datos:
+
 Si OSIMPLC está enviando datos por su puerto serie (TTL o RS-485), éstos serán mostrados en el campo de texto.
 Utilizando la lista desplegable Rx, el usuario puede ver los datos como Char (carácter) o Hex (códigos hexadecimales).
 Mientras el puerto de comunicaciones permanece abierto, el usuario puede seleccionar y copiar el contenido del campo de texto (datos enviados por OSIMPLC).
 
 4. Enviar datos:
+
 Utilizando la lista desplegable Tx, el usuario puede enviar datos como Char (carácter).
 El usuario puede tipear los datos (caracteres) en el campo de texto Tx, o copiarlos desde un archivo y pegarlos en dicho campo.
 Luego, debe presionar el botón Send, o la tecla Enter en el teclado para ejecutar el envío.
@@ -136,7 +139,7 @@ Otros modos de datos (char\, Type, TypEcho) pueden ser también utilizados.
 
 ## Historia del Software
 
-### [OBootLin]
+### OBootLin
 
 www.osimplc.com/Downloads/
 
@@ -145,7 +148,8 @@ Este código derivado es una versión ligeramente modificada de Tiny Pic Bootloa
 El módulo pictype.py ha sido modificado, sólo contiene identificadores para los microcontroladores PIC16F887 y 18F4520.
 Además, sólo contiene firmware (archivos .hex) para los microcontroladores PIC16F887 y 18F4520 con oscilador por cristal externo a 20 MHz.
 
-### [Tiny Pic Bootloader for GNU/Linux, Luis Claudio Gamboa fork](https://github.com/lcgamboa/tinybldlin)
+### Tiny Pic Bootloader for GNU/Linux, Luis Claudio Gamboa fork
+
 https://github.com/lcgamboa/tinybldlin
 
 Este código derivado es una versión modificada para permitir diferentes tamaños de bootloader (firmware), definidos por el usuario en el módulo "modules/pictype.py".
@@ -153,7 +157,8 @@ Además, el código original ha sido convertido para ser utilizado con el intér
 
 Última versión: d7cf21b, 16 Diciembre 2018.
 
-### [Tiny Pic Bootloader for GNU/Linux](http://tinybldlin.sourceforge.net/)
+### Tiny Pic Bootloader for GNU/Linux
+
 http://tinybldlin.sourceforge.net/
 
 El software Tiny Pic Bootloader for GNU/Linux original fue escrito por Fernando Juarez V.
@@ -164,7 +169,8 @@ TinybldLin fue escrito en python2 utilizando los módulos python-serial y wxphyt
 
 Última versión: tinybldlin-0.8.1-src.tar.gz, 15 Noviembre 2012.
 
-### [Tiny Pic Bootloader for Windows](http://www.etc.ugal.ro/cchiculita/software/picbootloader.htm)
+### Tiny Pic Bootloader for Windows
+
 http://www.etc.ugal.ro/cchiculita/software/picbootloader.htm
 
 Tiny Pic Bootloader (tinybld) fue escrito por Claudiu Chiculita, quien desarrolló el firmware (bootloader) y las primeras versiones del software para Windows (bajo Delphi).

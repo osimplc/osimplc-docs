@@ -16,7 +16,7 @@ PIC18F4520 (opcional): puede ser programando en lenguajes BASIC, C y Assembler
 programa de usuario y el cuádruple de capacidad en memoria volátil (RAM) comparado
 con el PIC16F887; aplicable para resolución de tareas relativamente complejas.
 
-> (Imagen MCU)
+![MCU](../images/mcu.png)
 
 ## Alimentación
 
@@ -32,10 +32,16 @@ Doce (12) entradas digitales optoacopladas tipo PNP (sink), en tres grupos de cu
 entradas más borne de referencia externa (pueden utilizarse con fuentes de alimentación
 independientes); señalizadas por LEDs;
 
+![Digital inputs](../images/digital_inputs.png)
+
+
 Dos (2) entradas analógicas no aisladas, configurables por medio de jumpers en las
 normas 0-10V, 0-5V ó 0(4)-20mA; una de ellas también configurable para conexión de una
 sonda PT100 (provee excitación de 1 mA), la otra también configurable para conexión de
 sensor de temperatura NTC-10K ó sensor LDR.
+
+![Analog Inputs + Power](../images/analog_inputs+power.png)
+
 
 ## Salidas
 
@@ -58,9 +64,14 @@ Un (1) conector UART-TTL, disponible para descarga del programa de usuario media
 bootloader (Tiny Pic Bootloader) y/o monitoreo desde una PC utilizando un conversor
 USB-TTL, o para conexión del módulo HMI Serial TTL;
 
+![TTL-RS485](../images/ttl-rs485.png)
+
 Un (1) conector ICSP (In Circuit System Programming) para instalación del bootloader, o
 escritura y lectura del programa de usuario y/o modificación de configuraciones del
 microcontrolador, utilizando programadores de PIC como USBPICPROG (Open Hardware + Free Software), PicKit2 u otros.
+
+![ICSP](../images/ICSP_reset.png)
+
 
 La transferencia del código máquina al OSIMPLC puede ser realizada por medio de
 comunicación serial utilizando un bootloader y un conversor USB-TTL conectado al pin-out

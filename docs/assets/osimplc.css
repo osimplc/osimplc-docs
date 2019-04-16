@@ -1,0 +1,10 @@
+.menu-item a.-active {
+  font-weight: bold;
+}
+
+.note {
+  background-color: #abcbff;
+  border-radius: 15px;
+  padding: 20px 10px 10px 20px;
+  font-size: 18px;
+}

@@ -1,17 +1,27 @@
 {
   "css": [
     "http://ricostacruz.com/docpress-rsc/style.css",
-    "https://raw.githubusercontent.com/docpress/docpress/master/docs/assets/custom.css"
+    "https://raw.githubusercontent.com/docpress/docpress/master/docs/assets/custom.css",
+    "assets/osimplc.css"
   ],
   "markdown": {
     "typographer": true,
     "plugins": {
       "decorate": {},
-      "include": "docs"
+      "include": "docs",
+      "link-attributes": {
+        "pattern": "pdf$",
+        "attrs": {
+          "target": "_blank",
+          "rel": "noopener"
+        }
+      },
+      "container": "note"
     }
   },
   "plugins": {
     "docpress-core": {},
+    "docpress-search": {},
     "docpress-base": {}
   }
 }

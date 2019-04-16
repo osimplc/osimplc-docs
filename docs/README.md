@@ -6,10 +6,9 @@
   * [Expansiones](es/04-expansions.md)
   * [Interacción Humano Máquina (HMI)](es/05-hmi.md)
   * [Entornos](es/06-environments.md)
-
-* Software
-  * [LDmicro](es/07-ldmicro.md)
-  * [Otros](es/08-otherlangs.md)
+    * Entornos de programación
+      * [LDmicro](es/07-ldmicro.md)
+      * [Otros](es/08-otherlangs.md)
 
 * Manuales - How to...?
   * [LDmicro](es/LDmicro_manual.md)

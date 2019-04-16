@@ -1,7 +1,6 @@
-ENTORNOS DE PROGRAMACIÓN Y TRANSFERENCIA
-==========
+# ENTORNOS DE PROGRAMACIÓN Y TRANSFERENCIA
 
-# SOFTWARE, FIRMWARE, HARDWARE
+## SOFTWARE, FIRMWARE, HARDWARE
 
 OSIMPLC requiere dos entornos diferentes para su utilización:
 
@@ -25,11 +24,11 @@ Sin embargo, siendo OSIMPLC un proyecto Open Hardware + Free Software, recomenda
 únicamente su utilización con software de licencia libre, y no brindaremos soporte para ninguna
 aplicación o desarrollo basado en software privativo.
 
-# ENTORNOS DE PROGRAMACIÓN RECOMENDADOS
+## ENTORNOS DE PROGRAMACIÓN RECOMENDADOS
 
-LADDER (IEC 61131-3): LDmicro, licencia GPLv3 (link a LDmicro)
+LADDER (IEC 61131-3): [LDmicro](07-ldmicro.md), licencia GPLv3
 
-Otros lenguajes no incluídos en normativa IEC61131-3: (link a Otros Lenguajes)
+[Otros lenguajes](08-otherlangs.md) no incluídos en normativa IEC61131-3:
 
 BASIC: Great Cow Basic, licencia GPLv2, LGPLv2.
 
@@ -38,31 +37,33 @@ C: SDCC, licencia GPLv2 o GPLv3, + IDE (Code::Blocks, Eclipse, otros).
 ASSEMBLER: gpasm (suite gputils), licencia GPLv2, + editor de texto (sobre GNU/Linux se
 puede utilizar Geany como IDE).
 
-# ENTORNOS DE TRANSFERENCIA RECOMENDADOS
+## ENTORNOS DE TRANSFERENCIA RECOMENDADOS
 
-## 1.TRANSFERENCIA SERIAL: SOFTWARE, FIRMWARE, HARDWARE
+### 1.TRANSFERENCIA SERIAL: SOFTWARE, FIRMWARE, HARDWARE
 
-### Software para GNU/Linux
+#### Software para GNU/Linux
 
 TinyBootloaderLin: licencia GPLv2, basado en Python2 (link).
 
 Pre-requisitos: deberá instalar como dependencias `python2-serial` y `python2-wxphython`,
 provistos por su distribución.
 
-> **Nota**:
-> Este software, disponible como Obootlin en el área de [Descargas](http://LINK.TO.ME), es una modificación del
-> software tinybldlin (fork lcgamboa) para su utilización con OSIMPLC; sus directorios contienen
-> únicamente los módulos identificadores y los bootloaders para PIC16F887 y PIC18F4520 con
-> cristal oscilador de 20 MHz y norma de comunicación serial 19200-8N1.
+::: note
+**Nota**:
+Este software, disponible como Obootlin en el área de [Descargas](http://osimplc.com/downloads), es una modificación del
+software tinybldlin (fork lcgamboa) para su utilización con OSIMPLC; sus directorios contienen
+únicamente los módulos identificadores y los bootloaders para PIC16F887 y PIC18F4520 con
+cristal oscilador de 20 MHz y norma de comunicación serial 19200-8N1.
+:::
 
-### Software para Windows
+#### Software para Windows
 
 Tiny Multi Bootlader+: Licencia Creative Commons Attribute - No Comercial (CC BY-NC) (link).
 
 Este software permite la descarga del código máquina en diversas líneas de
 microcontroladores. Lea las instrucciones de instalación y uso en su sitio web. (link)
 
-### Firmware
+#### Firmware
 
 Los firmwares de Tiny PIC Bootloader para PIC16F887y PIC18F4520, pre-instalados en los
 microcontroladores de OSIMPLC, han sido modificados para su compatibilidad con cristal
@@ -82,10 +83,9 @@ FTDI232 y Prolific2303.
 En caso de que el S.O. no disponga de dichos drivers, se debe consultar al proveedor del
 conversor USB-TTL acerca del chipset incluído y el driver recomendado para ese componente.
 
-## 2. TRANSFERENCIA DIRECTA (HARDWARE PROGAMADOR DE PICs)
+### 2. TRANSFERENCIA DIRECTA (HARDWARE PROGAMADOR DE PICs)
 
-OSIMPLC recomienda el uso de USBPICPROG, programador por puerto USB, Open Hardware
-+ Free Software. (link)
+OSIMPLC recomienda el uso de [USBPICPROG](http://usbpicprog.org/), programador por puerto USB, Open Hardware + Free Software
 
 El código máquina compilado por el Entorno de Programación (archivo .hex) puede ser
 transferido a OSIMPLC por medio de su conector ICSP, utilizando USBPICPROG y un cable
