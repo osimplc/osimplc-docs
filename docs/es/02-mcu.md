@@ -50,7 +50,7 @@ de ellas configurable como digital optoacoplada ó como PWM no aislada por medio
 jumpers, con conectores para los módulos especializados de salidas (tres grupos de
 cuatro salidas); señalizadas por LEDs.
 
-> IMAGE?
+![Outputs](../images/outputs.png)
 
 ## Expansión
 

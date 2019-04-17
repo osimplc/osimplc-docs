@@ -104,8 +104,6 @@ from https://github.com/LDmicro/LDmicro/releases.
 Ihor Nehrutsa also maintains an important wiki at https://github.com/LDmicro/LDmicro/wiki,
 there you will find valuable information about new functions, examples, methods, tutorials, etc.
 
-> NOTE: The latest version available is v4.4.3.0 (07/08/2018); due it contains a bug that closes
-> the program during the simulation, it is preferable to use the previous version v4.4.2.0 (07/26/2018).
 
 ### DERIVATIVES
 

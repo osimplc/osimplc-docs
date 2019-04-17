@@ -369,7 +369,7 @@ Terminología:
 
 ---
 
-**CONTACTO NORMALMENTE ABIERTO**  
+### CONTACTO NORMALMENTE ABIERTO
 
 ```
          Xname         Yname        Rname  
@@ -381,7 +381,7 @@ Instrucción Activada por Nivel.
 
 ---
 
-**CONTACTO NORMALMENTE CERRADO**  
+### CONTACTO NORMALMENTE CERRADO
 
 ```
         Xname         Yname         Rname  
@@ -392,7 +392,8 @@ Instrucción Activada por Nivel.
 
 ---
 
-> **BOBINA NORMAL**  
+### BOBINA NORMAL
+
 ```
          Yname         Rname  
       ----( )----   ----( )----  
@@ -814,10 +815,6 @@ Usted debe calcular el valor correcto de la variable de acuerdo al tiempo de cic
 
 > Parámetro (ms) = Tplc (ms) * variable.  
 P. ej. si Tiempo Ciclo (ms) = 10, para establecer un parámetro de 25 segundos en un temporizador la variable deberá tener un valor igual a 2500 (Tpar = 0,01 ms * 2500).  
-
-**NOTA**:  
-El nombre de la variable a utilizar como parámetro en el temporizador sólo puede contener los caracteres utilizados para realizar notación hexadecimal, es decir números del 0 al 9, las letras A, B C, D, E, F , X, a, b , c, d, e, f, x (el punto "." y el guión "-" también son admitidos por el editor, pero no deben ser utilizados porque generarán un error).  
-Ésta limitación probablemente será resuelta en próximas versiones de LDmicro.  
 
 ---
 
@@ -1848,7 +1845,7 @@ Ver [Binary-coded_decimal](https://en.wikipedia.org/wiki/Binary-coded_decimal)
       ~~[XqA0    XqB0&nbsp    qDir0]-  
     --\[XqZ0   QUAD ENCOD   qCount0]^--  
 ```
-La instrucción Codificador de Cuadratura toma dos señales cuadradas desplazadas en 90° (señales A y B codificadas en cuadratura) y una tercera señal de reposición (señal Z) desde un dispositivo encoder rotativo incremental o lineal, y provee como salidas la variable de un contador interno de la instrucción, un pulso positivo en su salida lógica cuando hay un cambio en dicha variable, y una salida de señal en un pin del microcontrolador para indicar la dirección de conteo.  
+La instrucción Codificador de Cuadratura toma dos señales cuadradas desplazadas en 90° (señales A y B codificadas en cuadratura) y una tercera señal de reposición (señal Z) desde un dispositivo encoder rotativo incremental o lineal, y provee como salidas la variable de un contador interno de la instrucción, un pulso positivo en su salida lógica cuando hay un cambio en dicha variable, y una salida de señal en un relé interno R ó un pin Y del microcontrolador, para indicar la dirección de conteo.  
 ```
                         move ->             |            <- move
          ^
@@ -1884,13 +1881,13 @@ La frecuencia de los pulsos en las entradas A y B debe ser menor a una cuarta pa
 
 Los rebotes de señal (bounces) que pudieran producirse en los pulsos de entrada en las señales A y B deben tener una duración menor a un octavo de ciclo del PLC (Tbounce[A,B] < Tcycle/8), de lo contrario  se producirán lecturas repetitivas de un mismo pulso, generando errores de conteo.  
 
-La entrada lógica para la señal Z es opcional y puede dejarse vacía (borrando el nombre la variable asignada por defecto en la instrucción), sin asignarla a pin de entrada en el microcontrolador.  
+La entrada lógica para la señal Z es opcional y puede dejarse vacía (borrando el nombre de la variable asignada por defecto en la instrucción), sin asignarla a pin de entrada en el microcontrolador.  
 
 La salida lógica para la señal Dir es opcional y puede dejarse vacía (borrando el nombre de la variable asignada por defecto en la instrucción), sin asignarla a pin de salida en el microcontrolador.  
 
 Si la señal en la entrada lógica de la instrucción es 1 (ON, True), entonces los pulsos en las entradas A, B y Z son decodificados y asignados al valor de la variable del contador interno de la instrucción (qCount0 por defecto).  
 
-La instrucción Codificador de Cuadratura ejecuta conteo simple, leyendo las transiciones (flancos positivos y negativos) que aparecen en la señal B y evaluando simultáneamente el nivel (0, 1) de la señal A.  
+La instrucción Codificador de Cuadratura ejecuta conteo doble, leyendo las transiciones (flancos positivos y negativos) que aparecen en la señal B y evaluando simultáneamente el nivel (0, 1) de la señal A.  
 
 Cuando un flanco en la señal lógica en la entrada B genera un conteo, se modificará la variable del contador interno qCount0 (incrementando o decrementando), se generará un pulso con duración de un ciclo de PLC en la salida lógica de la instrucción, y la señal en la salida opcional Dir será 1 (ON True) si el contador es incrementado, y 0 (OFF, False) si es decrementado.  
 

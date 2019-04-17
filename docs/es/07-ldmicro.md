@@ -107,9 +107,6 @@ la descarga del código fuente y los ejecutables puede hacerse desde https://git
 Ihor Nehrutsa mantiene también una importante wiki en https://github.com/LDmicro/LDmicro/wiki , allí encontrará valiosa información sobre las nuevas
 funciones, ejemplos, métodos, tutoriales, etc.
 
-> NOTA: La última versión disponible es la v4.4.3.0 (07/08/2018); dado que la misma contiene un
-> bug que cierra el programa durante la simulación, es preferible utilizar la versión anterior
-> v4.4.2.0 (26/07/2018).
 
 ### DERIVADAS
 

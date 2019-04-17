@@ -1,7 +1,5 @@
 # ENTORNOS DE PROGRAMACIÓN Y TRANSFERENCIA
 
-## SOFTWARE, FIRMWARE, HARDWARE
-
 OSIMPLC requiere dos entornos diferentes para su utilización:
 
 1. Entorno de programación, en el que se desarrollará la aplicación (programa de usuario) y se
@@ -12,11 +10,6 @@ compilado por el entorno de programación.
 OSIMPLC puede ser programado bajo cualquier software que soporte los microcontroladores
 PIC16F887 (estándar) y/o PIC18F4520 (alternativo), y genere códico máquina en archivos .hex
 (I8HEX).
-
-La transferencia del código máquina al OSIMPLC puede ser realizada, ya sea por medio de
-comunicación serial utilizando un bootloader, el conector UART y un conversor USB-TTL, o por
-transferencia directa utilizando un programador de PICs, utilizando cualquier hardware y su
-correspondiente software que soporte los antedichos microcontroladores.
 
 Dichos softwares pueden ser de licencia libre (Free Software GPL, BSD, MIT, o compatibles),
 de licencia privativa gratuita (MPLAB u otros), o de licencia privativa paga.
@@ -31,16 +24,19 @@ LADDER (IEC 61131-3): [LDmicro](07-ldmicro.md), licencia GPLv3
 
 [Otros lenguajes](08-otherlangs.md) no incluídos en normativa IEC61131-3:
 
-BASIC: Great Cow Basic, licencia GPLv2, LGPLv2.
+* BASIC: Great Cow Basic, licencia GPLv2, LGPLv2.
 
-C: SDCC, licencia GPLv2 o GPLv3, + IDE (Code::Blocks, Eclipse, otros).
+* C: SDCC, licencia GPLv2 o GPLv3, + IDE (Code::Blocks, Eclipse, otros).
 
-ASSEMBLER: gpasm (suite gputils), licencia GPLv2, + editor de texto (sobre GNU/Linux se
-puede utilizar Geany como IDE).
+* ASSEMBLER: gpasm (suite gputils), licencia GPLv2, + editor de texto (sobre GNU/Linux se puede utilizar Geany como IDE).
 
 ## ENTORNOS DE TRANSFERENCIA RECOMENDADOS
 
-### 1.TRANSFERENCIA SERIAL: SOFTWARE, FIRMWARE, HARDWARE
+La transferencia del código máquina al OSIMPLC puede ser realizada, ya sea por medio de
+comunicación serial utilizando un bootloader, el conector UART y un conversor USB-TTL, o por transferencia directa utilizando un programador de PICs, utilizando cualquier hardware y su
+correspondiente software que soporte los antedichos microcontroladores.
+
+### 1. TRANSFERENCIA SERIAL: SOFTWARE, FIRMWARE, HARDWARE
 
 #### Software para GNU/Linux
 
@@ -49,13 +45,11 @@ TinyBootloaderLin: licencia GPLv2, basado en Python2 (link).
 Pre-requisitos: deberá instalar como dependencias `python2-serial` y `python2-wxphython`,
 provistos por su distribución.
 
-::: note
-**Nota**:
-Este software, disponible como Obootlin en el área de [Descargas](http://osimplc.com/downloads), es una modificación del
-software tinybldlin (fork lcgamboa) para su utilización con OSIMPLC; sus directorios contienen
-únicamente los módulos identificadores y los bootloaders para PIC16F887 y PIC18F4520 con
-cristal oscilador de 20 MHz y norma de comunicación serial 19200-8N1.
-:::
+> **Nota**:
+> Este software, disponible como Obootlin en el área de [Descargas](http://osimplc.com/downloads), es una modificación del
+> software tinybldlin (fork lcgamboa) para su utilización con OSIMPLC; sus directorios contienen
+> únicamente los módulos identificadores y los bootloaders para PIC16F887 y PIC18F4520 con
+> cristal oscilador de 20 MHz y norma de comunicación serial 19200-8N1.
 
 #### Software para Windows
 
