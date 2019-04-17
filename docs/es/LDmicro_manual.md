@@ -3,7 +3,7 @@
 ## Implementación en OSIMPLC  
 
 
-> **NOTA IMPORTANTE**
+
 > Esta traducción del manual de LDmicro al español ha sido editada específicamente para su utilización con OSIMPLC, en base al contenido del archivo manual.txt en inglés provisto con la descarga de la versión v.5.3.0.1 de LDmicro.  
 > Esta edición pretenden corregir, ampliar y mejorar la traducción original del manual al español, provista como manual-es.txt en dicha versión del programa.
 > 
@@ -81,7 +81,7 @@ LDmicro compila lógica de contactos para PIC16 o código AVR. Los siguientes mi
 * ATmega1284P
 * ATmega2560  
 
-> **NOTA:** Verifique la lista de microcontroladores soportados mediante el menú Configuraciones > Microcontrolador. La lista para versiones >= v.5.3.0 es mucho más extensa, e incluye algunos microcontroladores AVR AT90 y ARM STM32.  
+ Verifique la lista de microcontroladores soportados mediante el menú Configuraciones > Microcontrolador. La lista para versiones >= v.5.3.0 es mucho más extensa, e incluye algunos microcontroladores AVR AT90 y ARM STM32.  
 > Consulte en el foro de LDmicro el estado de soporte para las diversas líneas y modelos de microcontroladores. Es habitual que se incorporen más modelos al liberar una nueva versión.  
 
 Usando LDmicro, puede diseñar un diagrama de contactos para su programa. Usted también puede simular la ejecución en tiempo real de la lógica en su PC. Una vez que esté convencido que el diagrama es correcto, puede asignar pines en el microcontrolador a la entradas y salidas del programa.  
@@ -206,7 +206,7 @@ LDmicro utiliza los prefijos del lenguaje C:
 + 0o__ ó 0O__ o 0__ números octales con dígitos 01234567   
 + 0b__ ó 0B__ para números binarios con dígitos 01  
 
-Nota: la notación binaria y la hexadecimal resultan más adecuadas para las operaciones bit a bit.
+> Nota: la notación binaria y la hexadecimal resultan más adecuadas para las operaciones bit a bit.
 
 
 #### Actualización: Versiones >= v.4.3.0
@@ -239,7 +239,8 @@ Las variables con signo int8 (byte) pueden ser utilizadas para que el archivo .h
 Las variables con signo int16 (entero, integer, word) pueden ser utilizadas habitualmente para operaciones aritméticas y con los valores obtenidos de la lectura de los ADC, y son compatibles con versiones de LDmicro previas a v.4.3.0.  
 Las variables con signo int24 y int32 (dword) pueden ser utilizadas para ampliar el rango de la operación, a costa de incrementar considerablemente el tamaño del archivo .hex y hacer más lenta la ejecución del código máquina en el microcontrolador.  
 La extensión del signo para variables de diferentes tamaños es proporcionada automáticamente en LDmicro.  
-Nota: las instrucciones MUL, DIV, MOD, no pueden procesar variables int32 con signo.  
+
+> Nota: las instrucciones MUL, DIV, MOD, no pueden procesar variables int32 con signo.  
 
 ### Marca de desbordamiento
 
@@ -254,9 +255,9 @@ Por el contrario, si a una variable int16 (word) dest = 127 (0x007f) se le agreg
 
 LDmicro repone a 0 la marca de desbordamiento ROverflowFlagV durante la inicialización (Power On o Reset por software o hardware).  
 
-Nota: CTC genera un impulso de sobrellenado (Overfill Carry) cuando Counter==Max.  
-      CTR genera un impulso de sobrellenado (Overfill Borrow) cuando Counter==Min.  
-      Overfill (Carry|Borrow) no establece a 1 la marca de desbordamiento ROverflowFlagV.  
+> Nota: CTC genera un impulso de sobrellenado (Overfill Carry) cuando Counter==Max.  
+>      CTR genera un impulso de sobrellenado (Overfill Borrow) cuando Counter==Min.  
+>      Overfill (Carry|Borrow) no establece a 1 la marca de desbordamiento ROverflowFlagV.  
 
 ### Marca de cambio de signo
 
@@ -333,16 +334,14 @@ Los pines destinados a comunicación UART y PWM son asignados automáticamente p
 
 Si desea remover la asignación de un objeto a un determinado pin para reasignarlo a otro, selecciónelo y asígnele el valor "(no pin)" que se muestra en la primer línea en la lista, luego selecciónelo nuevamente y asígnele el nuevo pin deseado.  
 
-**NOTA: PULL UP RESISTORS**  
-Tenga muy en consideración, al diseñar su hardware y/o editar el programa de usuario, todas las configuraciones de resistencias internas (pull up resistors) que LDmicro establece por defecto en los pines asigados a entradas digitales en algunos puertos de los microcontroladores PIC y AVR.  
+> **NOTA: PULL UP RESISTORS**  
+> Tenga muy en consideración, al diseñar su hardware y/o editar el programa de usuario, todas las configuraciones de resistencias internas (pull up resistors) que LDmicro establece por defecto en los pines asigados a entradas digitales en algunos puertos de los microcontroladores PIC y AVR.  
 
-Ver  
+Ver: 
 
-[Pull up resistors](https://github.com/LDmicro/LDmicro/wiki/Pull-up-resistors)  
-
-[Disable Pull up resistors](https://github.com/LDmicro/LDmicro/wiki/Disable-Pull-up-resistors)  
-
-[Pull down resistors](https://github.com/LDmicro/LDmicro/wiki/Pull-down-resistors)  
+* [Pull up resistors](https://github.com/LDmicro/LDmicro/wiki/Pull-up-resistors)  
+* [Disable Pull up resistors](https://github.com/LDmicro/LDmicro/wiki/Disable-Pull-up-resistors)
+* [Pull down resistors](https://github.com/LDmicro/LDmicro/wiki/Pull-down-resistors)  
 
 ### COMPILACION  
 
@@ -404,7 +403,7 @@ Esta instrucción debe ser siempre programada en el extremo derecho del escalón
 
 ---
 
-> **BOBINA INVERTIDA**  
+### BOBINA INVERTIDA  
 ```
          Yname         Rname  
       ----(/)----   ----(/)----  
@@ -415,7 +414,7 @@ Esta instrucción debe ser siempre programada en el extremo derecho del escalón
 
 ---
 
-> **ACTIVAR BOBINA (SET)**  
+### ACTIVAR BOBINA (SET)  
 ```
          Yname         Rname  
       ----(S)----   ----(S)----  
@@ -431,7 +430,7 @@ Esta instrucción debe ser siempre programada en el extremo derecho del escalón
 
 ---
 
-> **DESACTIVAR BOBINA (RESET)**  
+### DESACTIVAR BOBINA (RESET)  
 ```
          Yname         Rname  
       ----(R)----   ----(R)----  
@@ -450,7 +449,7 @@ Esta instrucción debe ser siempre programada en el extremo derecho del escalón
 
 ---
 
-> **BOBINA TELERRUPTOR**  
+### BOBINA TELERRUPTOR  
 ```
          Yname         Rname  
       ----(T)----   ----(T)----  
@@ -476,9 +475,9 @@ Esta instrucción debe ser siempre programada en el extremo derecho del escalón
 
 ---
 
-**NOTA:**  
-Varias bobinas con el mismo 'YName' o 'RName' pueden ser mentalmente representadas como un circuito integrado por múltiples entradas y una única salida.  
-Las bobinas normal e invertida transfieren directamente el estado de su entrada (normal o invertida) a su salida.  
+> **NOTA:**  
+> Varias bobinas con el mismo 'YName' o 'RName' pueden ser mentalmente representadas como un circuito integrado por múltiples entradas y una única salida.  
+> Las bobinas normal e invertida transfieren directamente el estado de su entrada (normal o invertida) a su salida.  
 
 Las bobinas S, R y T retienen el estado de su salida.  
 
@@ -491,7 +490,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 
 ---
 
-> **DETECCION DE FLANCO POSITIVO**  
+### DETECCION DE FLANCO POSITIVO  
 ```
       ----[_/¨OSR_/¨\_]----  
 ```
@@ -513,7 +512,7 @@ Por lo tanto, genera un pulso positivo con duración de un ciclo de PLC en cada 
 ```
 
 
-> **DETECCION DE FLANCO NEGATIVO**  
+### DETECCION DE FLANCO NEGATIVO  
 ```
       ----[¨\_OSF_/¨\_]----  
 ```
@@ -536,7 +535,7 @@ Por lo tanto, genera un pulso positivo con duración de un ciclo de PLC en cada 
 
 ---  
 
-> **DETECCION DE FLANCO NEGATIVO CON SALIDA INVERTIDA**  
+### DETECCION DE FLANCO NEGATIVO CON SALIDA INVERTIDA  
 ```
       ----[¨\_OSL¨\_/¨]----  
 ```
@@ -560,7 +559,7 @@ Por lo tanto, genera un pulso negativo con duración de un ciclo de PLC en cada 
 
 ---  
 
-> **TEMPORIZADOR A LA CONEXION**  
+### TEMPORIZADOR A LA CONEXION  
 ```
            Tname  
       --[TON 1.000 s]--  
@@ -587,7 +586,7 @@ La variable "Tname"cuenta desde cero en unidades de tiempo de ciclo del programa
 
 ---
 
-> **TEMPORIZADOR A LA DESCONEXION**  
+### TEMPORIZADOR A LA DESCONEXION  
 ```
            Tname  
       --[TOF 1.000 s]--  
@@ -613,7 +612,7 @@ La variable "Tname"cuenta desde cero en unidades de tiempo de ciclo del programa
 
 ---
 
-> **TEMPORIZADOR A LA CONEXION RETENTIVO**  
+### TEMPORIZADOR A LA CONEXION RETENTIVO  
 ```
            Tname  
       --[RTO 1.000 s]--  
@@ -644,7 +643,7 @@ La variable "Tname" cuenta desde cero en unidades de tiempo de ciclo del program
 ```
 
 ---
-> **TEMPORIZADOR A LA DESCONEXION RETENTIVO**  
+### TEMPORIZADOR A LA DESCONEXION RETENTIVO  
 ```
             Tname  
         --[RTL 1.000 s]--  
@@ -675,7 +674,7 @@ La variable "Tname" cuenta desde cero en unidades de tiempo de ciclo del program
 ```
 ---
 
-> **TEMPORIZADOR CICLICO**  
+### TEMPORIZADOR CICLICO  
 ```
              Tname  
       --[TCY 500 ms]--  
@@ -700,7 +699,7 @@ Si el valor Tname es igual al tiempo de ciclo del programa, el ciclo en la salid
 ```
 ---
 
-> **OSCILADOR**  
+### OSCILADOR  
 ```
     --[_/¨OSC_/¨\_/¨\_]--  
 ```
@@ -712,7 +711,7 @@ Si la señal en la entrada de la instrucción es 0 (OFF, False),la señal de sal
 
 ---
 
-> **TEMPORIZADOR DE IMPULSO POSITIVO**  
+### TEMPORIZADOR DE IMPULSO POSITIVO  
 ```
          Tname  
     --[THI 1.000 s]--  
@@ -740,7 +739,7 @@ Instrucción Activada por Flanco (positivo).
 
 ---
 
-> **TEMPORIZADOR DE IMPULSO NEGATIVO**  
+### TEMPORIZADOR DE IMPULSO NEGATIVO  
 ```
          Tname  
     --[TLO 1.000 s]--  
@@ -766,7 +765,7 @@ Instrucción Activada por Flanco (negativo).
 
 ---
 
-> **RESET TEMPORIZADOR RETENTIVO**  
+### RESET TEMPORIZADOR RETENTIVO  
 ```
      RTOname     RTLname  
     --{RES}--   --{RES}--  
@@ -781,7 +780,7 @@ RES restablece sólo la variable numérica de las instrucciones de RTO, RTL, no 
 Esta instrucción siempre debe ser programada en el extremo derecho del escalón (rung).  
 
 ---
-> **RETARDO**  
+### RETARDO  
 ```
        n us  
     --[DELAY]--  
@@ -796,7 +795,7 @@ Ver [DELAY-us](https://github.com/LDmicro/LDmicro/wiki/DELAY-us)
 ---
 
 
-> **CONVERSOR TIEMPO A RETARDO**  
+### CONVERSOR TIEMPO A RETARDO  
 ```
           Tconst  
     --[T2DELAY 10 us]--  
@@ -805,7 +804,7 @@ La instrucción Conversor Tiempo a Retardo toma la constante de tiempo de ciclo 
   
 ---
 #### Actualización sobre temporizadores: versiones >= v.4.4.1**  
-> **TON, TOF, THI, TLO, RTO, RTL, TCY**  
+### TON, TOF, THI, TLO, RTO, RTL, TCY  
 ```
           Tname  
     --[TXX variable]--  
@@ -818,7 +817,7 @@ P. ej. si Tiempo Ciclo (ms) = 10, para establecer un parámetro de 25 segundos e
 
 ---
 
-> **CONTADOR ASCENDENTE / DESCENDENTE**  
+### CONTADOR ASCENDENTE / DESCENDENTE  
 ```
         Cname            Cname  
     --[CTU >= 5]--   --[CTD > -5]--  
@@ -861,8 +860,8 @@ Se pueden realizar también operaciones aplicables a variables generales (aritm�
 
 ```
 
-**NOTA**:  
-Si se desea realizar conteo ascendente con una variable que pueda sobrepasar por exceso el parámetro (var > par) y/o conteo descendente y sobrepasar por defecto el parámetro (var < par), ésto deberá implementarse por medio de rutinas generadas con instrucciones matemáticas (suma y resta), de evaluación de flanco, y de comparación contra el parámetro fijo o variable. P. ej.:
+> **NOTA**:  
+> Si se desea realizar conteo ascendente con una variable que pueda sobrepasar por exceso el parámetro (var > par) y/o conteo descendente y sobrepasar por defecto el parámetro (var < par), ésto deberá implementarse por medio de rutinas generadas con instrucciones matemáticas (suma y resta), de evaluación de flanco, y de comparación contra el parámetro fijo o variable. P. ej.:
 
 ```
   ||; Increasing variable = Count Up
@@ -884,7 +883,7 @@ Si se desea realizar conteo ascendente con una variable que pueda sobrepasar por
   
 ---
 
-> **RESET CONTADOR ASCENDENTE / DESCENDENTE**  
+### RESET CONTADOR ASCENDENTE / DESCENDENTE  
 ```
      CTUname     CTDname  
     --{RES}--   --{RES}--  
@@ -901,7 +900,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
   
 ---
 
-> **CONTADOR CIRCULAR ASCENDENTE / DESCENDENTE**  
+### CONTADOR CIRCULAR ASCENDENTE / DESCENDENTE  
 ```
         Cname           Cname  
     --[CTC 0:7]--   --[CTR 5:0]--  
@@ -941,7 +940,8 @@ Se pueden realizar también operaciones aplicables a variables generales (aritm�
 
 ---
 
-> **CONVERSOR TIEMPO A CONTADOR**  
+### CONVERSOR TIEMPO A CONTADOR  
+
 ```
          Tconst  
     --[T2CNT 10 ms]--  
@@ -950,7 +950,6 @@ La instrucción  Conversor Tiempo a Contador toma la constante de tiempo de cicl
 
 Ver [TIME-to-COUNTER-converter](https://github.com/LDmicro/LDmicro/wiki/TIME-to-COUNTER-converter)
 
----
 
 #### Actualización sobre contadores: versiones >= v.4.4.0  
 Los contadores CTU, CTD, CTC y CTR en las versiones >= v.4.4.0 admiten más opciones de configuración:  
@@ -960,6 +959,7 @@ Los contadores CTU, CTD, CTC y CTR en las versiones >= v.4.4.0 admiten más opci
 En CTU y CTC (contadores ascendentes), START deberá ser menor que el parámetro máximo (START < MAX); en CTD y CTR (contadores descendentes), START deberá ser mayor que el parámetro mínimo (START > MIN).  
 3. También permiten establecer si la señal a evaluar en la entrada de conteo será dinámica por flanco positivo (/) o flanco negativo (\\), o será estática normal (-) o invertida (o).  
 4. Los contadores circulares CTC y CTD ya no requieren ser programados en el extremo derecho del escalón (rung), pudiendo utilizarse como operaciones intermedias. P. ej. ésto es útil si envía la señal de salida del contador a un relé interno (marca) Rname y utiliza sus contactos Rname como condición de entrada para otras instrucciones.  
+
 ```
    ||                               ||
    ||  X1          CTU1:0      Y1   ||
@@ -978,19 +978,20 @@ En CTU y CTC (contadores ascendentes), START deberá ser menor que el parámetro
    ||                               ||
 
 ```
-**NOTA:**
-Todos los contadores en versiones anteriores a v.4.4.0 tienen entrada dinámica por flanco positivo. La entrada por defecto --/{CTX}-- es compatible con dichas versiones.  
 
-**Consejo:**  
-Si para la aplicación resultan necesarios contadores bidireccionales con posibilidad de que la variable de conteo vaya más allá de los valores de parámetros (por exceso o por defecto), este requerimiento puede implementarse en el programa por medio de instrucciones aritméticas de suma y resta sobre una misma variable, en conjunto con operaciones de comparación.  
+> **NOTA:**
+> Todos los contadores en versiones anteriores a v.4.4.0 tienen entrada dinámica por flanco positivo. La entrada por defecto --/{CTX}-- es compatible con dichas versiones.  
+
+> **Consejo:**  
+> Si para la aplicación resultan necesarios contadores bidireccionales con posibilidad de que la variable de conteo vaya más allá de los valores de parámetros (por exceso o por defecto), este requerimiento puede implementarse en el programa por medio de instrucciones aritméticas de suma y resta sobre una misma variable, en conjunto con operaciones de comparación.  
 
 Puede utilizar la instrucción de evaluación de flanco positivo -{OSR}- para emular los contadores de versiones anteriores a v.4.4.0 al realizar esta programación.  
 
 Puede implementar la operación -{MOV 0, var}- en forma equivalente a una operación -{RES Cnt}-  
 
----
 
-> **CONVERTIDOR ANALOGICO/DIGITAL**  
+### CONVERTIDOR ANALOGICO/DIGITAL  
+
 ```
         Aname  
     --{READ ADC}--  
@@ -1005,7 +1006,7 @@ Para todos los dispositivos actualmente soportados, una señal de 0 voltios corr
 
 Si está utilizando un microcontrolador AVR, conecte AREF a AVcc, y AVcc a Vcc con un circuito de filtrado LC (ver hoja de datos del microcontrolador).  
 
-**NOTA:**  A partir de la versión v.4.4.0, puede establecer una tensión de referencia diferente de Vdd mediante el parámetro REFS de la instrucción READ ADC.  
+> **NOTA:**  A partir de la versión v.4.4.0, puede establecer una tensión de referencia diferente de Vdd mediante el parámetro REFS de la instrucción READ ADC.  
 
 El parámetro REFS por defecto 0 es compatible con versiones anteriores, y utiliza Vdd como tensión de referencia para la conversión A/D.  
 
@@ -1022,9 +1023,10 @@ En general no todos los pines estarán disponibles para uso con el convertidor A
 
 Esta instrucción siempre debe ser programada en el extremo derecho del escalón (rung).  
 
----
 
-> **PWM: CONFIGURAR CICLO DE SERVICIO**
+
+### PWM: CONFIGURAR CICLO DE SERVICIO
+
 ```  
        duty_cycle  
     --{PWM 10 kHz}--  
@@ -1036,8 +1038,8 @@ El ciclo de servicio debe ser un número entre 0 y 100 (porcentaje); 0 correspon
 
 Puede especificar la frecuencia base del PWM expresada en Hz. La frecuencia base que se especifique puede no ser exactamente alcanzable, dependiendo de cómo se divide en relación a la frecuencia de trabajo del microcontrolador (interna, RC, cristal). LDmicro seleccionará la frecuencia base más cercana posible; si el error es grande entonces lo advertirá en un cuadro de diálogo. Frecuencias base muy altas pueden sacrificar la resolución de la salida PWM.  
 
-**NOTA:**  
-El código generado por la lógica Ladder utiliza un temporizador interno para medir el tiempo de ciclo (ejecución) del programa. Ésto significa que la instrucción modulación de ancho de pulso PWM sólo está disponible para microcontroladores que disponen al menos de dos temporizadores internos (Timer0, Timer1). PWM utiliza el pin CCP2 (no CCP1) en microcontroladores PIC16, y el pin OC1B (no OC1A) en AVR.  
+> **NOTA:**  
+> El código generado por la lógica Ladder utiliza un temporizador interno para medir el tiempo de ciclo (ejecución) del programa. Ésto significa que la instrucción modulación de ancho de pulso PWM sólo está disponible para microcontroladores que disponen al menos de dos temporizadores internos (Timer0, Timer1). PWM utiliza el pin CCP2 (no CCP1) en microcontroladores PIC16, y el pin OC1B (no OC1A) en AVR.  
 
 Esta instrucción siempre debe ser programada en el extremo derecho del escalón (rung).  
 
@@ -1052,9 +1054,9 @@ Ver [LDmicro-PWM](https://github.com/LDmicro/LDmicro/wiki/LDmicro-PWM)
 
 ATENCION: si se requiere cambiar la frecuencia base del PWM (no su ciclo de servicio) durante la ejecución del programa en el microcontrolador, utilice la instrucción RESET PWM siguiente.  
 
----
 
-> **RESET PWM**
+### RESET PWM
+
 ```  
        PWM  
     --{RES}--  
@@ -1067,7 +1069,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 
 ---
 
-> **VARIABLE PERSISTENTE**  
+### VARIABLE PERSISTENTE  
 ```
       saved_var  
     --{PERSIST}--  
@@ -1077,7 +1079,7 @@ No hay necesidad de guardar explícitamente la variable en EEPROM; ésto suceder
 
 Después de la energización (alimentación) del microcontrolador, el valor guardado se carga automáticamente desde la EEPROM en la variable.  
 
-**NOTA:** Si una variable que cambia con frecuencia se hace persistente, la memoria EEPROM en el microcontrolador puede degradarse muy rápidamente, dado que sólo soporta un número limitado de escrituras (~100.000).  
+> **NOTA:** Si una variable que cambia con frecuencia se hace persistente, la memoria EEPROM en el microcontrolador puede degradarse muy rápidamente, dado que sólo soporta un número limitado de escrituras (~100.000).  
 
 Esta instrucción siempre debe ser programada en el extremo derecho del escalón (rung).  
 
@@ -1085,7 +1087,7 @@ Ver [MAKE-PERSISTENT-operation](https://github.com/LDmicro/LDmicro/wiki/MAKE-PER
 
 ---
 
-> **MOVER VARIABLE**  
+### MOVER VARIABLE  
 ```
     {destvar :=  }     {Tret :=  }  
     --{ 123 MOV}--   --{srcvar MOV}--  
@@ -1100,7 +1102,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 
 ---
 
-> **OPERACIONES ARITMETICAS CON VARIABLES**  
+### OPERACIONES ARITMETICAS CON VARIABLES  
 ```
       {ADD kay   :=}       {SUB Ccnt  :=}  
     --{ 'a' + 10   }--   --{ Ccnt - 10  }--  
@@ -1128,7 +1130,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 
 ---
 
-> **OPERACION MODULO**  
+### OPERACION MODULO  
 ```
      {MOD dest:=}  
     --{src % 2}--  
@@ -1145,7 +1147,7 @@ Ver [Modulo_operation](https://en.wikipedia.org/wiki/Modulo_operation)
 
 ---
 
-> **NEGATIVO**  
+### NEGATIVO  
 ```
       {NEG dest:=}  
     --{  -    src}--  
@@ -1159,7 +1161,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 
 ---
 
-> **OPERACIONES DE COMPARACION**
+### OPERACIONES DE COMPARACION
 ```  
       [var ==]       [var >]       [1 >=]  
     --[ var2 ]--   --[ 1   ]--   --[ Ton]--  
@@ -1177,7 +1179,7 @@ Si la entrada de señal de la instrucción es 0 (OFF, False), la operación de c
 
 ---
 
-> **OPERACIONES LOGICAS BIT A BIT**
+### OPERACIONES LOGICAS BIT A BIT
 ```  
       {AND  var1 :=}       {OR   Ccnt :=}  
     --{var2 & var3 }--   --{ Ccnt | 0o07}--  
@@ -1196,7 +1198,7 @@ Ver [Bitwise_operation](http://en.wikipedia.org/wiki/Bitwise_operation)
 
 ---
 
-> **ACTIVAR / DESACTIVAR UN BIT**  
+### ACTIVAR / DESACTIVAR UN BIT  
 ```
           {var}              {var}  
     --{SetBit bit}--   --{ClrBit bit}--  
@@ -1233,7 +1235,7 @@ Se debe programar
 
 ---
 
-> **COMPROBAR EL ESTADO DE UN BIT**  
+### COMPROBAR EL ESTADO DE UN BIT  
 ```
            [var]                [var]  
     --[IfBitSet bit]--   --[IfBitClr bit]--  
@@ -1270,7 +1272,7 @@ Ver [Arithmetic_shift](https://en.wikipedia.org/wiki/Arithmetic_shift)
 
 ---
 
-> **DESPLAZAMIENTO ARITMETICO A LA IZQUIERDA / DERECHA**
+### DESPLAZAMIENTO ARITMETICO A LA IZQUIERDA / DERECHA
 
 ```  
      {SHL  var1 :=}     {SHR   cnt :=}  
@@ -1291,7 +1293,7 @@ SHR - desplazamiento aritmético a la derecha
 ```
 ---
 
-> **DESPLAZAMIENTO LOGICO A LA DERECHA**  
+### DESPLAZAMIENTO LOGICO A LA DERECHA  
 ```
       {SR0  dest :=}  
     --{var  sr0  3 }--  
@@ -1304,7 +1306,7 @@ SR0 - desplazamiento lógico a la derecha
 ```
 
 ---
-> **DESPLAZAMIENTO LOGICO A LA IZQUIERDA**  
+### DESPLAZAMIENTO LOGICO A LA IZQUIERDA  
 
 El desplazamiento lógico a la izquierda es equivalente a SHL, desplazamiento aritmético a la izquierda.  
 
@@ -1312,7 +1314,7 @@ Ver [Logical shift](https://en.wikipedia.org/wiki/Logical_shift)
 
 ---
 
-> **DESPLAZAMIENTO CIRCULAR A LA IZQUIERDA / DERECHA**  
+### DESPLAZAMIENTO CIRCULAR A LA IZQUIERDA / DERECHA  
 ```
      {ROL  dest :=}    {ROR    dv :=}  
     --{var rol 4}--   --{var ror 4}--  
@@ -1336,7 +1338,7 @@ ROR - desplazamiento circular a la derecha
 
 ---
 
-> **INVERTIR ORDEN DE BITS**  
+### INVERTIR ORDEN DE BITS  
 ```
          {dest:=}  
     --{OPPOSITE src}--  
@@ -1365,7 +1367,7 @@ Si la señal en la entrada lógica de la instrucción es 0 (OFF, False), la vari
 
 ---
 
-> **INTERCAMBIO DE BYTES Y CUARTETOS**  
+### INTERCAMBIO DE BYTES Y CUARTETOS  
 ```
        {dest:=}  
     --{SWAP src}--  
@@ -1450,7 +1452,7 @@ Si la señal en la entrada lógica de la instrucción es 0 (OFF, False), la vari
 
 ---
 
-> **REGISTRO DE DESPLAZAMIENTO CON VARIABLES**
+### REGISTRO DE DESPLAZAMIENTO CON VARIABLES
 ```
      {SHIFT REG}  
     --{var0..3}--  
@@ -1467,13 +1469,13 @@ Por ejemplo, el registro de desplazamiento {SHIFT REG} --{reg0..3}--se asocia co
 
 reg0 se mantiene inalterado al ejecutar la instrucción; luego de ejecutarla se puede mover un nuevo valor a la variable de entrada (reg0), el que posteriormente será desplazado a las variables subsecuentes del registro en cada nueva operación de desplazamiento.  
 
-**NOTA:** un Registro de Desplazamiento con gran número de variables puede consumir fácilmente una gran cantidad de memoria.  
+> **NOTA:** un Registro de Desplazamiento con gran número de variables puede consumir fácilmente una gran cantidad de memoria.  
 
 Esta instrucción siempre debe ser programada en el extremo derecho del escalón (rung).  
 
 ---
 
-> **BUSQUEDA EN TABLA**  
+### BUSQUEDA EN TABLA  
 ```
       {dest := }  
     --{ LUT[i] }--  
@@ -1491,7 +1493,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 
 ---
 
-> **LINEARIZACION POR TRAMOS**  
+### LINEARIZACION POR TRAMOS  
 ```
         {yvar := }  
     --{ PWL[xvar] }--  
@@ -1554,7 +1556,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 
 ---
 
-> **CIRCUITO CERRADO, CIRCUITO ABIERTO**
+### CIRCUITO CERRADO, CIRCUITO ABIERTO
 ```  
     --+---+--    --+   +--  
 ```
@@ -1562,7 +1564,7 @@ La condición de salida de un circuito cerrado es siempre igual a su condición 
 
 ---
 
-> **RELE DE CONTROL MAESTRO**  
+### RELE DE CONTROL MAESTRO  
 ```
     --{MASTER RLY}--  
 ```
@@ -1578,7 +1580,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 
 ---
 
->**GOTO**  
+### GOTO  
 ```
          ?  
     --{GOTO}--  
@@ -1599,7 +1601,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 
 ---
 
->**LABEL**  
+### LABEL  
 ```
          ?  
     --{LABEL}--  
@@ -1610,7 +1612,7 @@ La instrucción LABEL(name) identifica el punto de destino para el salto en la e
 Los nombres asignados a cada una de las instrucciones LABEL(name) y a su correspondiente llamada GOTO(name) deben ser únicos en cada programa, y distinguen mayúsculas y minúsculas.  
 
 ---
->**SUBPROG, ENDSUB, GOSUB, RETURN**  
+### SUBPROG, ENDSUB, GOSUB, RETURN  
 
 Este conjunto de instrucciones permite gestionar llamadas a subprogramas (subrutinas) que se pueden procesar una o más veces en el transcurso de un mismo ciclo de PLC.  
 
@@ -1657,7 +1659,7 @@ Ver:
 
 ---
 
-> **RESTABLECER TEMPORIZADOR DE CONTROL (WATCHDOG)**  
+### RESTABLECER TEMPORIZADOR DE CONTROL (WATCHDOG)  
 ```
     --{CLRWDT}--  
 ```
@@ -1669,7 +1671,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 
 ---
 
-> **BLOQUEAR EJECUCION**
+### BLOQUEAR EJECUCION
 ```  
     --{LOCK}--  
 ```
@@ -1683,7 +1685,7 @@ Sólo el WDT o un restablecimiento externo (mediante hard reset por !MCLR, o cor
 
 ---
 
-> **SUSPENDER**  
+### SUSPENDER  
 ```
     --{SLEEP}--  
 ```
@@ -1697,8 +1699,8 @@ Puede utilizarse para ahorrar energía cuando la alimentación del microcontrola
 
 La operación SLEEP no afecta a otros pines de Entrada/Salida del microcontrolador ni a otras operaciones de LDmicro.  
 
-**Nota:**  
-La ejecución de la instrucción SLEEP alarga el tiempo de ciclo del PLC y los temporizadores TON, TOF, RTO, TCY.  
+> **Nota:**  
+> La ejecución de la instrucción SLEEP alarga el tiempo de ciclo del PLC y los temporizadores TON, TOF, RTO, TCY.  
 
 Ésto puede romper el flujo normal de trabajo del programa, provocando un error en la aplicación.  
 
@@ -1706,7 +1708,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 
 ---
 
-> **GENERADOR ALEATORIO**  
+### GENERADOR ALEATORIO  
 ```
         var  
     --{ RAND }--  
@@ -1737,7 +1739,7 @@ Ver [Linear_congruential_generator](https://en.m.wikipedia.org/wiki/Linear_congr
 
 ---
 
-> **INICIALIZAR GENERADOR ALEATORIO**  
+### INICIALIZAR GENERADOR ALEATORIO  
 ```
       {SRAND     Rand}  
     --{$seed:=newSeed}--  
@@ -1755,7 +1757,7 @@ Las fuentes de entropía para la generación de la variable newSeed (semilla) pu
 
 ---
 
->**GENERADOR DE CARACTERES EN LED DE 7 SEGMENTOS**  
+### GENERADOR DE CARACTERES EN LED DE 7 SEGMENTOS  
 ```
       {7SEG    dest:=}  
     --{C          src}--  
@@ -1818,7 +1820,7 @@ En esta implementación, el parámetro de conexión común de la instrucción de
 
 ---
 
->**CONVERSOR BINARIO A BCD**  
+### CONVERSOR BINARIO A BCD  
 ```
   {BIN2BCD dest:=}  
     --{src}--  
@@ -1840,7 +1842,7 @@ Ver [Binary-coded_decimal](https://en.wikipedia.org/wiki/Binary-coded_decimal)
 
 ---
 
->**CODIFICADOR DE CUADRATURA (QUAD ENCODER)**
+### CODIFICADOR DE CUADRATURA (QUAD ENCODER)
 ```  
       ~~[XqA0    XqB0&nbsp    qDir0]-  
     --\[XqZ0   QUAD ENCOD   qCount0]^--  
@@ -1908,14 +1910,15 @@ Si el parámetro Count per revol de la instrucción es menor que 0, las señales
 
 Si la señal en la entrada lógica de la instrucción es 0 (OFF, False), entonces las señales en las entradas A, B y Z son ignoradas (no se procesan).  
 
-**NOTA:**  
-Para simular las señales lógicas en las entradas A, B y Z, debe hacer doble click sobre su nombre en la lista de variables en la zona inferior de la ventana de LDmicro.  
+> *NOTA:*
+> Para simular las señales lógicas en las entradas A, B y Z, debe hacer doble click sobre su nombre en la lista de variables en la zona inferior de la ventana de LDmicro.  
 
-Vea detalles en  
+Vea detalles en:
 [Incremental-QUADRATURE-ENCODER](https://github.com/LDmicro/LDmicro/wiki/Incremental-QUADRATURE-ENCODER)  
 [Incremental QUADRATURE ENCODER controls the brightness of the LED (PWM out)](https://github.com/LDmicro/LDmicro/wiki/Incremental-QUADRATURE-ENCODER-controls-the-brightness-of-the-LED-(PWM-out))
 
 ---
+
 ### OPERACIONES DE COMUNICACION SERIAL DE DATOS POR UART (RECEPCION Y TRANSMISION)
 
 LDmicro puede generar código para utilizar el periférico UART incorporado en ciertos modelos de microcontroladores PIC y AVR.  
@@ -1926,8 +1929,8 @@ Eventualmente, no podrán obtenerse ciertas velocidades de comunicación en baud
 
 En LDmicro existen diferentes instrucciones disponibles para enviar caracteres individuales, bytes en modo binario ("crudo") o cadenas de caracteres formateadas que incluyen un texto fijo, el valor de una variable y caracteres de control.  
 
-**NOTA:**  
-**Es imprescindible asegurar que el buffer de salida de la UART está libre antes de tratar de enviar un nuevo carácter, byte en modo binario o cadena formateada.**  
+> **NOTA:**  
+> **Es imprescindible asegurar que el buffer de salida de la UART está libre antes de tratar de enviar un nuevo carácter, byte en modo binario o cadena formateada.**  
 
 Para cumplir esta condición, usted puede utilizar diferentes estilos de programación:  
 
@@ -1938,7 +1941,7 @@ Para cumplir esta condición, usted puede utilizar diferentes estilos de program
 
 ---
 
-> **RECIBIR CARACTER POR UART**  
+### RECIBIR CARACTER POR UART  
 ```
           var  
     --{UART RECV}--  
@@ -1951,7 +1954,7 @@ Si la señal en la entrada lógica de esta instrucción es 0 (OFF, False), enton
 
 ---
 
-> **ENVIAR CARACTER POR UART**  
+### ENVIAR CARACTER POR UART  
 ```
           var  
     --{UART SEND}--  
@@ -1964,8 +1967,8 @@ Si la señal en la entrada lógica de esta instrucción es 0 (OFF, False), enton
 
 Tenga en consideración que los caracteres tardan algún tiempo en transmitirse. Sólo se debe  activar la entrada lógica de la instrucción (intentar enviar un carácter) cuando el buffer de transmisión del UART no está ocupado.  
 
-**NOTA:**  
-Lea más abajo respecto al uso de la instrucción ENVIAR CADENA FORMATEADA POR UART, antes de usar la instrucción UART SEND.  
+> **NOTA:**  
+> Lea más abajo respecto al uso de la instrucción ENVIAR CADENA FORMATEADA POR UART, antes de usar la instrucción UART SEND.  
 
 La instrucción para enviar una cadena formateada de caracteres es mucho más fácil de usar, y casi con toda seguridad es capaz de realizar la tarea de comunicación de datos que usted desea.
 
@@ -1989,7 +1992,7 @@ Ver [UART communication FAQ part 2](https://github.com/LDmicro/LDmicro/wiki/UART
 
 ---
 
-> **ENVIAR BYTE EN MODO BINARIO POR UART**  
+### ENVIAR BYTE EN MODO BINARIO POR UART  
 ```
           var  
     --{UART SENDn}--  
@@ -2002,7 +2005,7 @@ Si la señal en la entrada lógica de esta instrucción es 0 (OFF, False), enton
 
 ---
 
-> **ENVIAR POR UART: está listo?**  
+### ENVIAR POR UART: está listo?  
 ```
        Is ready?  
     --[UART SEND]--  
@@ -2012,7 +2015,7 @@ La salida es 1 (ON, True) cuando el buffer de transmisión de la UART está vac�
 
 ---
 
-> **RECIBIR POR UART: hay dato disponible?**  
+### RECIBIR POR UART: hay dato disponible?  
 ```
        Is avail?  
     --[UART RECV]--  
@@ -2022,7 +2025,7 @@ La salida es 1 (ON, True) cuando hay datos no leídos en el buffer de recepción
 
 ---
 
-> **ENVIAR CADENA FORMATEADA POR UART**  
+### ENVIAR CADENA FORMATEADA POR UART  
 ```
              var  
     --{"value: \c\r\n"}--  
@@ -2099,7 +2102,7 @@ Estos procedimientos exceden el alcance y los propósitos del proyecto OSIMPLC.
 
 ---
 
-> **SPI ENVIAR / RECIBIR**
+### SPI ENVIAR / RECIBIR
 ```
       {SPI      SPI1}  
     --{->recv send->}--  
@@ -2111,7 +2114,7 @@ En un bus SPI, el envío y la recepción son simultáneos, por eso ambas operaci
 
 ---
 
-> **SPI ESCRIBIR**  
+### SPI ESCRIBIR  
 ```
       {SPI_WR  SPI}  
     --{"Message"->}--  
@@ -2123,7 +2126,7 @@ No abusar de esta instrucción, porque puede ralentizar la ejecución del progra
 
 ---
 
-> **I2C LEER**  
+### I2C LEER  
 ```
       {I2C_RD    I2C}  
     --{->recv 0x20 0}--  
@@ -2132,7 +2135,7 @@ La instrucción I2C READ lee un byte desde la dirección dada del registro en el
 
 ---
 
-> **I2C WRITE**  
+### I2C WRITE  
 ```
       {I2C_WR    I2C}  
     --{0x20 0 send->}--
@@ -2141,7 +2144,7 @@ La instrucción I2C WRITE escribe un byte a la dirección dada del registro en e
 
 ---  
 
-> **FORMATEAR CADENA DE CARACTERES**  
+### FORMATEAR CADENA DE CARACTERES  
 ```
            dest  
     --{"string", var}--  
@@ -2227,6 +2230,7 @@ Para valores mayores de x, la variable `temp 'se desbordará. Hay un límite inf
 ## ESTILO DE CODIFICACION  
 
 **1.**  
+
 Está permitida la programación de múltiples bobinas u otras operaciones (aritméticas, MOV, etc.) en paralelo en un solo escalón (rung).  
 
 Ésto significa que usted puede hacer programaciones como la siguiente:  
@@ -2262,6 +2266,7 @@ Aún así, a menudo es una buena idea agrupar la lógica relacionada en un solo 
 Ésto genera un código casi idéntico a si se hiciera en escalones separados, pero claramente muestra que están relacionados cuando se ven en el diagrama de contactos.  
 
 **2.**  
+
 En general, se considera mala práctica escribir el código de tal manera que su salida dependa del orden de los escalones. Por ejemplo, este código no es muy bueno si tanto Xa como Xb pueden ser verdaderos:
 
 ```
@@ -2305,7 +2310,7 @@ Si la instrucción MOV se moviera al escalón inferior de este segmento de progr
 La salida de este código depende por lo tanto del orden en que se evalúan las instrucciones.  
 Teniendo en cuenta lo engorroso que sería codificar ésto de otra manera, es aceptable.
 
-**NOTA**: en versiones >= 3.X también es posible utilizar instrucciones como SetBit para efectuar la asignación de un 1 en cada bit de la variable destino v.  
+> **NOTA**: en versiones >= 3.X también es posible utilizar instrucciones como SetBit para efectuar la asignación de un 1 en cada bit de la variable destino v.  
 
 
 ## ABREVIATURAS  
@@ -2330,7 +2335,10 @@ La programación descuidada en las rutinas de carga ó almacenamiento de los arc
 
 Por favor, informe de errores adicionales o solicitudes de características al autor.  
 
+---
+
 Gracias a:  
+=========
 
 * Marcelo Solano, por reportar un error de interfaz de usuario bajo Win98  
 * Serge V. Polubarjev, por informar que RA3: 0 en elPIC16F628 no funcionaba y también indicar cómo solucionarlo  
@@ -2340,14 +2348,16 @@ Gracias a:
 * David Rothwell, por reportar varios errores en la interfaz de usuario y un problema con la función "Exportar como texto"  
 
 
-## EXENCION DE RESPONSABILIDAD  
+EXENCION DE RESPONSABILIDAD  
+==========
   
 **NO UTILICE CODIGO GENERADO POR LDMICRO EN APLICACIONES DONDE UNA FALLA EN EL SOFTWARE PODRIA RESULTAR EN PELIGRO A LA VIDA HUMANA O EN DAÑO A LA PROPIEDAD.**  
 
 **EL AUTOR NO ASUME NINGUNA RESPONSABILIDAD POR LOS DAÑOS RESULTANTES DE LA OPERACION DE LDMICRO O POR EL CODIGO GENERADO POR LDMICRO.**  
 
 
-## LICENCIA DE USO, COPIA Y MODIFICACION  
+LICENCIA DE USO, COPIA Y MODIFICACION  
+===========
 
 Este programa es software libre: puede usarlo, redistribuirlo y/o modificarlo bajo las condiciones de la Licencia Pública General GNU (GPL) publicada por la Free Software Foundation, ya sea la versión 3 de la Licencia, o a su elección, cualquier versión posterior.  
 
@@ -2382,6 +2392,7 @@ Wiki: <https://github.com/LDmicro/LDmicro/wiki>
 Email: <LDmicro.GitHub@gmail.com>
 
 **Traducción de esta versión y adaptación del manual al español para OSIMPLC:**
+
 Daniel Hernando Mirkin  
 
 Email: danielmirkin at gmail dot com

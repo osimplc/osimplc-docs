@@ -57,6 +57,8 @@ cuatro salidas); señalizadas por LEDs.
 Dos (2) conectores para módulos de expansión; uno para módulos a bordo (expansiones
 estándar), y el otro para módulos externos diseñados por el propio usuario o bajo pedido.
 
+> IMAGEN CON LAS LUPAS
+
 ## Comunicación
 
 Un (1) puerto RS-485 half-duplex, disponible para conexión con instrumental industrial,

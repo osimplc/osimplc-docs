@@ -7,10 +7,11 @@
   * [Módulo de interacción HMI](es/05-hmi.md)
   * [Programación y transferencia](es/06-environments.md)
     * [LDmicro](es/07-ldmicro.md)
-    * [Otros lenguages](es/08-otherlangs.md)
+    * [Otros lenguajes](es/08-otherlangs.md)
 
-* Manuales - Cómo...?
-  * [Descargar: Cómo...?](downloads.md)
+* Manuales
   * [Manual LDmicro](es/LDmicro_manual.md)
   * [Manual OBootLin](es/OBootLin_manual.md)
+  * [Descargar: Cómo...?](downloads.md)
 
+* [Descargas](downloads.md)

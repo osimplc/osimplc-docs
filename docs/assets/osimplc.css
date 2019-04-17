@@ -2,11 +2,14 @@
   font-weight: bold;
 }
 
-.note {
-  background-color: #abcbff;
-  border-radius: 15px;
-  padding: 20px 10px 10px 20px;
-  font-size: 18px;
+.page-es04-expansions p {
+  display: flex;
+}
+
+.page-es04-expansions p img {
+  margin: auto !important;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ccc;
 }
 
 .search-input {

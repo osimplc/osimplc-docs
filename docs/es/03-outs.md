@@ -42,7 +42,7 @@ Vcc; Imax: 2A carga resistiva, 1A carga inductiva.
 Alimentación del módulo: 24V/12 Vcc, configurable por jumper. Puede compartir la
 alimentación con el módulo MCU, o utilizar fuente independiente.
 
-![O4t](../images/o4t.png)
+![O4T](../images/o4t.png)
 
 ## OMX: MÓDULO DE SALIDAS MIXTO, RELEŚ + TRANSISTOR + SALIDA ANALÓGICA
 

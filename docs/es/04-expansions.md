@@ -13,8 +13,7 @@ ciertos módulos especializados.
 Cuatro (4) entradas analógicas normalizadas, configurables individualmente en las
 normas 0-10V, 0-5V ó 0(4)-20mA por medio de jumpers.
 
-![E4AI](../images/e4ai.png)
-
+![E4AI](../images/e4ai.png) <!--{.center}-->
 
 ### E4DI
 
@@ -66,7 +65,7 @@ están invertidas respecto a la detección del líquido.
 Cuatro (4) salidas a transistor NPN colector abierto, Umax: 24 Vcc; Imax: 200 mA carga
 resistiva, 100 mA carga inductiva, señalizadas por LEDs (ver Nota).
 
-![E4TI](../images/e4do.png)
+![E4DO](../images/e4do.png)
 
 
 ## MÓDULOS MIXTOS DE ENTRADAS Y SALIDAS
