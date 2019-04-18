@@ -32,7 +32,7 @@ carga inductiva.
 Alimentación del módulo: 24Vcc (estándar), 12Vcc (O4R-12, a pedido). Puede compartir la
 alimentación con el módulo MCU, o utilizar fuente independiente.
 
-![O4R](../images/o4r.png)
+![O4R](images/o4r.png)
 
 ## O4T: MÓDULO DE SALIDAS A TRANSISTORES DE POTENCIA
 
@@ -42,7 +42,7 @@ Vcc; Imax: 2A carga resistiva, 1A carga inductiva.
 Alimentación del módulo: 24V/12 Vcc, configurable por jumper. Puede compartir la
 alimentación con el módulo MCU, o utilizar fuente independiente.
 
-![O4T](../images/o4t.png)
+![O4T](images/o4t.png)
 
 ## OMX: MÓDULO DE SALIDAS MIXTO, RELEŚ + TRANSISTOR + SALIDA ANALÓGICA
 
@@ -57,7 +57,7 @@ Una (1) salida analógica, configurable como 0-10V / 0(4)-20mA, resolución máx
 Alimentación del módulo: 24Vcc. Puede compartir la alimentación con el módulo MCU, o
 utilizar fuente independiente.
 
-![OMX](../images/omx.png)
+![OMX](images/omx.png)
 
 ## OVF: MÓDULO PARA CONTROL DE VARIADOR DE FRECUENCIA
 
@@ -70,7 +70,7 @@ Una (1) salida analógica, normas 0-10V / 0(4)-20mA, resolución máx. 10 bits.
 Alimentación del módulo: 24Vcc. Puede compartir la alimentación con el módulo MCU, o
 utilizar fuente independiente.
 
-![OVF](../images/ovf.png)
+![OVF](images/ovf.png)
 
 ## EN DESARROLLO
 

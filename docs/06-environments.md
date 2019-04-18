@@ -40,13 +40,13 @@ correspondiente software que soporte los antedichos microcontroladores.
 
 #### Software para GNU/Linux
 
-TinyBootloaderLin: licencia GPLv2, basado en Python2 (link).
+OBootLin: licencia GPLv2, basado en Python3 (link!!).
 
-Pre-requisitos: deberá instalar como dependencias `python2-serial` y `python2-wxphython`,
+Pre-requisitos: deberá instalar como dependencias `python3-serial` y `python3-wxphython`,
 provistos por su distribución.
 
 > **Nota**:
-> Este software, disponible como Obootlin en el área de [Descargas](http://osimplc.com/downloads), es una modificación del
+> Este software, disponible como OBootlin en el área de [Descargas](http://osimplc.com/downloads), es una modificación del
 > software tinybldlin (fork lcgamboa) para su utilización con OSIMPLC; sus directorios contienen
 > únicamente los módulos identificadores y los bootloaders para PIC16F887 y PIC18F4520 con
 > cristal oscilador de 20 MHz y norma de comunicación serial 19200-8N1.

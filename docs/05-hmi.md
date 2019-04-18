@@ -1,7 +1,7 @@
 MÓDULO HMI
 ==========
 
-![HMI](../images/hmi.png)
+![HMI](images/hmi.png)
 
 El módulo HMI (Human Machine Interface) está diseñado para facilitar la interacción del usuario
 con el automatismo; permite mostrar mensajes de texto para alarma o información, estados de

@@ -8,7 +8,7 @@ function initSearch () {
   initComponent()
 
   var inputElements = document.querySelectorAll('.search-input')
-  var root = '/'
+  var root = '/docs/'
 
   document.body.addEventListener('click', function (e) {
     var target = e.target,

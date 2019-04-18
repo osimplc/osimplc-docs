@@ -16,7 +16,7 @@ PIC18F4520 (opcional): puede ser programando en lenguajes BASIC, C y Assembler
 programa de usuario y el cuádruple de capacidad en memoria volátil (RAM) comparado
 con el PIC16F887; aplicable para resolución de tareas relativamente complejas.
 
-![MCU](../images/mcu.png)
+![MCU](images/mcu.png)
 
 ## Alimentación
 
@@ -26,13 +26,15 @@ fusible y contra inversión de polaridad, señalizada por LED;
 Tres (3) salidas de tensión de referencia: 0V; 2,5V (máx. 10mA); 5V (máx. 50mA); no
 protegidas.
 
+![MCU](images/power_reg.png)
+
 ## Entradas
 
 Doce (12) entradas digitales optoacopladas tipo PNP (sink), en tres grupos de cuatro
 entradas más borne de referencia externa (pueden utilizarse con fuentes de alimentación
 independientes); señalizadas por LEDs;
 
-![Digital inputs](../images/digital_inputs.png)
+![Digital inputs](images/digital_inputs.png)
 
 
 Dos (2) entradas analógicas no aisladas, configurables por medio de jumpers en las
@@ -40,7 +42,7 @@ normas 0-10V, 0-5V ó 0(4)-20mA; una de ellas también configurable para conexi�
 sonda PT100 (provee excitación de 1 mA), la otra también configurable para conexión de
 sensor de temperatura NTC-10K ó sensor LDR.
 
-![Analog Inputs + Power](../images/analog_inputs+power.png)
+![Analog Inputs + Power](images/analog_inputs+power.png)
 
 
 ## Salidas
@@ -50,7 +52,7 @@ de ellas configurable como digital optoacoplada ó como PWM no aislada por medio
 jumpers, con conectores para los módulos especializados de salidas (tres grupos de
 cuatro salidas); señalizadas por LEDs.
 
-![Outputs](../images/outputs.png)
+![Outputs](images/outputs.png)
 
 ## Expansión
 
@@ -68,13 +70,13 @@ Un (1) conector UART-TTL, disponible para descarga del programa de usuario media
 bootloader (Tiny Pic Bootloader) y/o monitoreo desde una PC utilizando un conversor
 USB-TTL, o para conexión del módulo HMI Serial TTL;
 
-![TTL-RS485](../images/ttl-rs485.png)
+![TTL-RS485](images/ttl-rs485.png)
 
 Un (1) conector ICSP (In Circuit System Programming) para instalación del bootloader, o
 escritura y lectura del programa de usuario y/o modificación de configuraciones del
 microcontrolador, utilizando programadores de PIC como USBPICPROG (Open Hardware + Free Software), PicKit2 u otros.
 
-![ICSP](../images/ICSP_reset.png)
+![ICSP](images/ICSP_reset.png)
 
 
 La transferencia del código máquina al OSIMPLC puede ser realizada por medio de
@@ -82,10 +84,8 @@ comunicación serial utilizando un bootloader y un conversor USB-TTL conectado a
 UART, o por transferencia directa utilizando un programador de PICs conectado al pin-out
 ICSP.
 
-
-**OSIMPLC provee como accesorio un cable de programación USB-TTL**
-==========
-
 > **Nota**:
 > La utilización del conector ICSP es excluyente con la utilización de las salidas Y0-Y1; la
 > utilización del conector UART-TTL es excluyente con la conexión del puerto RS-485.
+
+#### OSIMPLC provee como accesorio un cable de programación USB-TTL

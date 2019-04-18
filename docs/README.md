@@ -1,17 +1,17 @@
 
 * [OSIMPLC](../README.md)
-  * [Introducción](es/01-home.md)
-  * [Módulo central MCU](es/02-mcu.md)
-  * [Módulos de salidas](es/03-outs.md)
-  * [Módulos de expansión](es/04-expansions.md)
-  * [Módulo de interacción HMI](es/05-hmi.md)
-  * [Programación y transferencia](es/06-environments.md)
-    * [LDmicro](es/07-ldmicro.md)
-    * [Otros lenguajes](es/08-otherlangs.md)
+  * [Introducción](01-home.md)
+  * [Módulo central MCU](02-mcu.md)
+  * [Módulos de salidas](03-outs.md)
+  * [Módulos de expansión](04-expansions.md)
+  * [Módulo de interacción HMI](05-hmi.md)
+  * [Programación y transferencia](06-environments.md)
+    * [LDmicro](07-ldmicro.md)
+    * [Otros lenguajes](08-otherlangs.md)
 
 * Manuales
-  * [Manual LDmicro](es/LDmicro_manual.md)
-  * [Manual OBootLin](es/OBootLin_manual.md)
+  * [Manual LDmicro](LDmicro_manual.md)
+  * [Manual OBootLin](OBootLin_manual.md)
   * [Descargar: Cómo...?](downloads.md)
 
-* [Descargas](downloads.md)
+* [Descargas](downloads_software.md)
