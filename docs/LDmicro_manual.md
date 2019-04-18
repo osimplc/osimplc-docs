@@ -5,7 +5,7 @@
 
 
 > Esta traducción del manual de LDmicro al español ha sido editada específicamente para su utilización con OSIMPLC, en base al contenido del archivo manual.txt en inglés provisto con la descarga de la versión v.5.3.0.1 de LDmicro.  
-> Esta edición pretenden corregir, ampliar y mejorar la traducción original del manual al español, provista como manual-es.txt en dicha versión del programa.
+> Esta edición pretende corregir, ampliar y mejorar la traducción original del manual en español, provista como manual-es.txt en dicha versión del programa.
 > 
 > Al editar la presente versión, se ha modificado la organización en la presentación de los diferentes ítems, en particular la referida a las diferentes instrucciones Ladder implementadas por LDmicro.  
 > El objetivo de esta reorganización ha sido presentar las diferentes instrucciones agrupándolas en función del tipo de proceso o actividad que ejecutan, y por la complejidad en su implementación.  
@@ -775,7 +775,8 @@ Esta instrucción restablece la variable interna (pone a a 0) de un temporizador
 Los temporizadores TON y TOF son restablecidos automáticamente cuando la señal en la entrada lógica es 0 ó 1, respectivamente, por lo que la instrucción RES no es necesaria para estos temporizadores.  
 Las variables internas de las instrucciones RTO y RTL no son reseteadas automáticamente, por lo que deben restablecerse programáticamente utilizando una instrucción RES. Cuando la entrada  de la instrucción RES es 1 (ON, True), el temporizador se restablece; cuando la entrada es 0 (OFF, False), no se ejecuta ninguna acción.  
 
-RES restablece sólo la variable numérica de las instrucciones de RTO, RTL, no sus salidas.  
+RES restablece la variable numérica de las instrucciones de RTO, RTL.  
+Si la salida del temporizador retentivo está activada en 1 (ON, True), al restablecerse la variable a 0 mediante la instrucción RES la salida también será inmediatamente restablecida a 0 (OFF, False).  
 
 Esta instrucción siempre debe ser programada en el extremo derecho del escalón (rung).  
 
@@ -788,7 +789,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 La instrución RETARDO causa una interrupción por un tiempo equivalente a n microsegundos en la ejecución del programa.  
 
 La instrucción RETARDO no utiliza ningún temporizador ni contador.  
-Las operaciones básicas del microcontrolador NOP() y JMP(dirección actual +1) son utilizadas para generar la interrupción.  
+Las operaciones básicas del microcontrolador NOP() y JMP(dirección actual + 1) son utilizadas para generar la interrupción.  
     
 Ver [DELAY-us](https://github.com/LDmicro/LDmicro/wiki/DELAY-us)  
 
@@ -803,13 +804,13 @@ Ver [DELAY-us](https://github.com/LDmicro/LDmicro/wiki/DELAY-us)
 La instrucción Conversor Tiempo a Retardo toma la constante de tiempo de ciclo T en ms, la convierte en un valor de retardo específico y guarda el resultado en la variable Tconst para su posterior utilización como parámetro en la instrucción RETARDO.  
   
 ---
-#### Actualización sobre temporizadores: versiones >= v.4.4.1**  
+### Actualización sobre temporizadores: versiones >= v.4.4.1  
 ### TON, TOF, THI, TLO, RTO, RTL, TCY  
 ```
           Tname  
     --[TXX variable]--  
 ```
-Se puede utilizar una variable general como parámetro de un temporizador.  
+**Se puede utilizar una variable general como parámetro de un temporizador.**  
 Usted debe calcular el valor correcto de la variable de acuerdo al tiempo de ciclo del PLC previamente establecido en Configuraciones > MCU parámetros... > Tiempo Ciclo.  
 
 > Parámetro (ms) = Tplc (ms) * variable.  
@@ -940,6 +941,13 @@ Se pueden realizar también operaciones aplicables a variables generales (aritm�
 
 ---
 
+### Actualización sobre contadores: versiones >= v.4.4.1  
+### CTU, CTD, CTC, CTR  
+
+**Se puede utilizar una variable general como parámetro de un contador.**  
+
+---
+
 ### CONVERSOR TIEMPO A CONTADOR  
 
 ```
@@ -1063,7 +1071,7 @@ ATENCION: si se requiere cambiar la frecuencia base del PWM (no su ciclo de serv
 ```
 Si la señal en la entrada lógica de la instrucción 1 (ON, True), esta instrucción inhabilita la modulación de ancho de pulso PWM y establece permanentemente la salida de pulsos en nivel bajo (0, OFF).
 
-Permite configurar otra frecuencia base para la modulación de ancho de pulso PWM establecida mediante la instrucción SET PWM DUTY CYCLE previa, esta nueva configuración sólo se puede implementar después de ejecutar la instrucción RESET PWM.  
+Permite configurar otra frecuencia base para la modulación de ancho de pulso PWM establecida mediante una instrucción SET PWM DUTY CYCLE previa; esta nueva configuración sólo se puede implementar mientras el PWM está deshabilitado mediante la ejecución de la instrucción RESET PWM.  
 
 Esta instrucción siempre debe ser programada en el extremo derecho del escalón (rung).  
 
