@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "docpress s",
-    "build": "docpress build"
+    "start": "npm run start:es",
+    "start:es": "ln -s es docs && ln -s README.es.md README.md && docpress s",
+    "build": "npm run build:es",
+    "build:es": "rm docs README.md && ln -s es docs && ln -s README.es.md README.md && docpress build && mv _docpress _docs_es",
+    "build:en": "rm docs README.md && ln -s en docs && ln -s README.en.md README.md && docpress build && mv _docpress _docs_en"
   },
   "author": "",
   "license": "ISC",

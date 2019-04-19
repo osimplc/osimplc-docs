@@ -43,3 +43,8 @@
   font-weight: 700;
   color: #1a60bc;
 }
+
+.results-panel .search-keyword {
+  font-weight: bold;
+  text-decoration: underline;
+}
