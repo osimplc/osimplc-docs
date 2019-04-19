@@ -8,7 +8,8 @@ function initSearch () {
   initComponent()
 
   var inputElements = document.querySelectorAll('.search-input')
-  var root = '/docs/'
+  var currentPath = window.location.pathname
+  var root = currentPath.substring(0, currentPath.lastIndexOf('/') + 1)
 
   document.body.addEventListener('click', function (e) {
     var target = e.target,
@@ -43,7 +44,7 @@ function initSearch () {
         })
         if (panel.classList.contains('results-panel')) {
           panel.classList.add('show')
-          panel.innerHTML = html ? html : '<p>No Results!</p>'
+          panel.innerHTML = html ? html : '<p>No Encontrado!</p>'
         }
       } else {
         if (panel.classList.contains('results-panel')) {

@@ -8,7 +8,8 @@ function initSearch () {
   initComponent()
 
   var inputElements = document.querySelectorAll('.search-input')
-  var root = '/docs_en/'
+  var currentPath = window.location.pathname
+  var root = currentPath.substring(0, currentPath.lastIndexOf('/') + 1)
 
   document.body.addEventListener('click', function (e) {
     var target = e.target,
