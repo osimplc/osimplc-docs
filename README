@@ -1,0 +1,26 @@
+# Doc site for OSIMPLC
+
+Based on https://github.com/docpress/docpress
+
+## Pre requisites
+
+Install NodeJS and npm
+
+## How to use:
+
+git clone (this repo)
+
+npm install 
+
+npm run build:es
+(generates static site at _docs_es)
+
+npm run build:en
+(generates static site ad _docs_en)
+
+Then cd into either _docs_es or _docs_en and launch a web server from ther, e.g.
+
+python -m SimpleHTTPServer
+
+Then browse to http://localhost:8000
+
