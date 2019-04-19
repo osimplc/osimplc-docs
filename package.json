@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm docs README.md | :",
+    "start:es": "npm run clean && ln -s es docs && ln -s README.es.md README.md && docpress s",
+    "start:en": "npm run clean && ln -s en docs && ln -s README.en.md README.md && docpress s",
+    "build:es": "npm run clean && ln -s es docs && ln -s README.es.md README.md && docpress build && rm -rf _docs_es && mv _docpress _docs_es && npm run clean",
+    "build:en": "npm run clean && ln -s en docs && ln -s README.en.md README.md && docpress build && rm -rf _docs_en && mv _docpress _docs_en && npm run clean",
     "start": "npm run start:es",
-    "start:es": "ln -s es docs && ln -s README.es.md README.md && docpress s",
-    "build": "npm run build:es",
-    "build:es": "rm docs README.md && ln -s es docs && ln -s README.es.md README.md && docpress build && mv _docpress _docs_es",
-    "build:en": "rm docs README.md && ln -s en docs && ln -s README.en.md README.md && docpress build && mv _docpress _docs_en"
+    "build": "npm run build:es && npm run build:en"
   },
   "author": "",
   "license": "ISC",
