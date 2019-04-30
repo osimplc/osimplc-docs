@@ -47,12 +47,14 @@ configurable as digital optocoupled or as not isolated PWM by means of jumpers, 
 connectors for specialized output modules (three groups of four Departures); with LEDs
 signaling.
 
-> IMAGE?
+![Outputs](images/outputs.png)
 
 ## Expansion
 
 Two (2) connectors for expansion modules; one for on-board modules (standard
 expansions), and the other for external modules designed by the user or on request.
+
+![Connectors for expansion modules](images/mcu-expansions.png)
 
 ## Communication
 

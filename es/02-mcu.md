@@ -59,7 +59,7 @@ cuatro salidas); señalizadas por LEDs.
 Dos (2) conectores para módulos de expansión; uno para módulos a bordo (expansiones
 estándar), y el otro para módulos externos diseñados por el propio usuario o bajo pedido.
 
-> IMAGEN CON LAS LUPAS
+![Conectores para módulos de expansión](images/mcu-expansions.png)
 
 ## Comunicación
 
