@@ -8,10 +8,10 @@
   * [Programación y transferencia](06-environments.md)
     * [LDmicro](07-ldmicro.md)
     * [Otros lenguajes](08-otherlangs.md)
+  * [Documentación del hardware](09-hardware.md)
 
-* Manuales
+* Software
+  * [Descargas](downloads.md)
   * [Manual LDmicro](LDmicro_manual.md)
   * [Manual OBootLin](OBootLin_manual.md)
-  * [Descargar: Cómo...?](downloads.md)
 
-* [Descargas](downloads_software.md)

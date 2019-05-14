@@ -1,8 +1,8 @@
-![Logo](docs/images/logo2.png)
+![Logo](docs/images/logo_notext.png)
 
 # OSIMPLC
 <!-- {.massive-header.-with-tagline.center} -->
-> Open Simple Modular PLC
+> Open Simple Industrial Modular Programmable Logic Controller
 
 Índice
 
@@ -14,14 +14,15 @@
 * [Programación y transferencia](docs/06-environments.md)
   * [LDmicro](docs/07-ldmicro.md)
   * [Otros lenguajes](docs/08-otherlangs.md)
+* [Documentación del hardware](docs/09-hardware.md)
 
-* Manuales
+* Software
+  * [Descargas](docs/downloads.md)
   * [Manual LDmicro](docs/LDmicro_manual.md)
   * [Manual OBootLin](docs/OBootLin_manual.md)
-  * [Descargar: Cómo...?](docs/downloads.md)
 
-* [Descargas](docs/downloads_software.md)
 
+<!-- 
 
 ```
 
@@ -46,3 +47,4 @@
 
 
 ```
+-->
