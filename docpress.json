@@ -24,5 +24,6 @@
     "docpress-core": {},
     "docpress-simple-search": {},
     "docpress-base": {}
-  }
+  },
+  "github": "osimplc/osimplc-docs"
 }
