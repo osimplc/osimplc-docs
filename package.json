@@ -8,8 +8,8 @@
     "clean": "rm docs README.md | :",
     "start:es": "npm run clean && ln -s es docs && ln -s README.es.md README.md && docpress s",
     "start:en": "npm run clean && ln -s en docs && ln -s README.en.md README.md && docpress s",
-    "build:es": "npm run clean && ln -s es docs && ln -s README.es.md README.md && docpress build && rm -rf _docs_es && mv _docpress _docs_es && npm run clean",
-    "build:en": "npm run clean && ln -s en docs && ln -s README.en.md README.md && docpress build && rm -rf _docs_en && mv _docpress _docs_en && npm run clean",
+    "build:es": "npm run clean && ln -s es docs && ln -s README.es.md README.md && docpress build && rm -rf dist/es && mv _docpress dist/es && npm run clean",
+    "build:en": "npm run clean && ln -s en docs && ln -s README.en.md README.md && docpress build && rm -rf dist/en && mv _docpress dist/en && npm run clean",
     "start": "npm run start:es",
     "build": "npm run build:es && npm run build:en"
   },

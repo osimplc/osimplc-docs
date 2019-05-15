@@ -1,7 +1,6 @@
 docs
 README.md
-_docs_es
-_docs_en
+dist
 _docpress
 node_modules
 *~
