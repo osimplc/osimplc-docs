@@ -13,7 +13,7 @@ Estos firmwares son totalmente compatibles con otros softwares libres y privativ
 
 ### Descargar OBootLin:
 
-Desde [OSIMPLC página Descargas](http://osimplc.com/Downloads), descargue el archivo OBootLin.zip
+Desde [la página Descargas](downloads.md), descargue el archivo OBootLin.zip
 
 ### Dependencias requeridas
 

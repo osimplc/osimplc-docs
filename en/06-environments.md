@@ -43,13 +43,13 @@ used as IDE).
 
 #### GNU/Linux Software
 
-OBootLin: GPLv2 license, based on Python3 (link!!)
+[OBootLin](https://github.com/osimplc/obootlin): GPLv2 license, based on Python3
 
 Prerequisites: you must install `python3-serial` and `python3-wxphython` dependencies, provided
 by your distribution.
 
 > **Note**:
-> This software, available as OBootLin in the [Downloads](http://osimplc.com/downloads) area, is a modification of the tinybldlin
+> This software, available as OBootLin in the [downloads](downloads.md) area, is a modification of the tinybldlin
 > software (fork lcgamboa) for use with OSIMPLC; its directories contain only the identify modules
 > and bootloaders for PIC16F887 and PIC18F4520 with 20 MHz crystal oscillator and serial
 > communication on 19200-8N1 standard.

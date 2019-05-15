@@ -147,7 +147,7 @@ Other types of data can be sent (char\ , Type, TypEcho).
 
 ### [OBootlin]  
 
-http://www.osimplc.com/downloads/
+https://github.com/osimplc/obootlin
 
 This forked code is a stripped and slightly modified version from Tiny Pic Bootloader for GNU/Linux, Luis Claudio Gamboa fork.  
 
