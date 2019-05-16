@@ -15,3 +15,5 @@
   * [Manual LDmicro](LDmicro_manual.md)
   * [Manual OBootLin](OBootLin_manual.md)
 
+* [English version](http://osimplc.com/docs/en)
+
