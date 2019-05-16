@@ -1,6 +1,7 @@
 docs
 README.md
-dist
+dist/*
+!dist/.empty
 _docpress
 node_modules
 *~
