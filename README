@@ -13,12 +13,12 @@ git clone (this repo)
 npm install 
 
 npm run build:es
-(generates static site at _docs_es)
+(generates static site at dist/es)
 
 npm run build:en
-(generates static site ad _docs_en)
+(generates static site at dist/en)
 
-Then cd into either _docs_es or _docs_en and launch a web server from ther, e.g.
+Then cd into either dist/es or dist/en and launch a web server from ther, e.g.
 
 python -m SimpleHTTPServer
 
