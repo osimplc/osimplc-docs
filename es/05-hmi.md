@@ -28,6 +28,9 @@ en el módulo MCU el microcontrolador PIC18F4520 y realizarse la programación e
 o Assembler, aprovechando bibliotecas y funciones especializadas disponibles en dichos
 lenguajes.
 
+* [Descargar Firmware](downloads/OSIMPLC_HMI_firmware.zip)
+
+
 > **NOTA**:
 > El módulo HMI no es un panel de operador (OP) de tipo industrial; no dispone actualmente de
 > envolvente o gabinete con grado de protección IP (en desarrollo).

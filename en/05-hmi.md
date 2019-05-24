@@ -26,6 +26,8 @@ Interaction possibilities will be significantly increased if the PIC18F4520 micr
 installed in the MCU module and programming is developed under BASIC, C or Assembler,
 taking advantage of libraries and specialized functions available in these languages.
 
+* [Download Firmware](downloads/OSIMPLC_HMI_firmware.zip)
+
 > **NOTE**:
 > The HMI module is not an industrial-type operator panel (OP); it does not currently have an
 > enclosure or cabinet with IP protection grade (in development).

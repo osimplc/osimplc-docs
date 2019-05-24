@@ -6,3 +6,5 @@
   * [firmware](https://sourceforge.net/projects/tinypicbootload/files/Tiny%20Multi%20Bootloader%2B%20%28v0.11.0%29%20-%20Firmware%20Only.zip/download)
 
 * [OBootLin](https://github.com/osimplc/obootlin/archive/obootlin-osimplc.zip) (fork of tinybldloader, by OSIMPLC)
+
+* [HMI Module Firmware](downloads/OSIMPLC_HMI_firmware.zip)
