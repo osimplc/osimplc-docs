@@ -61,7 +61,7 @@ utilizar fuente independiente.
 
 ## OVF: MÓDULO PARA CONTROL DE VARIADOR DE FRECUENCIA
 
-Tres (3) salidas para conexión directa de las de entradas digitales del variador de
+Tres (3) salidas para conexión directa de las entradas digitales del variador de
 frecuencia a los optoacopladores en el módulo MCU. Pueden utilizarse indistintamente
 con señales PNP o NPN. No protegidas por fusible.
 

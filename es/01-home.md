@@ -55,7 +55,7 @@ módulo HMI Serial TTL.
 Las salidas digitales disponibles en los diferentes módulos cuentan con protecciones integradas: 
 señales de control optoacopladas y limitadores de picos de tensión; y en los
 módulos especializados de salidas, disponen de portafusibles individuales para cada
-salida y para alimentación del módulo, haciendo innecesari el requerimiento de
+salida y para alimentación del módulo, haciendo innecesario el requerimiento de
 portafusibles externos.
 
 Todos los módulos de OSIMPLC cuentan con planos de masa diseñados para minimizar
