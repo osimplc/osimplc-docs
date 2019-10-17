@@ -1,5 +1,9 @@
 # Downloads
 
+* [OSIMPLC IDE](https://github.com/osimplc/IDE/releases/download/first/OSIMPLC_IDE.zip)
+
+---
+
 * [LDmicro v5.3.0.4](https://github.com/LDmicro/LDmicro/releases/download/5.3.0.4/build5304.zip)
   * [english manual (plain text format)](downloads/LDmicro_manual_en.txt)
 
