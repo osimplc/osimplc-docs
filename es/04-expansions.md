@@ -10,8 +10,7 @@ ciertos módulos especializados.
 
 ### E4AI
 
-Cuatro (4) entradas analógicas normalizadas, configurables individualmente en las
-normas 0-10V, 0-5V ó 0(4)-20mA por medio de jumpers.
+Cuatro (4) entradas analógicas normalizadas, configurables individualmente en las normas 0-10V, 0-5V ó 0(4)-20mA por medio de jumpers.
 
 ![E4AI](images/e4ai.png) <!--{.center}-->
 
