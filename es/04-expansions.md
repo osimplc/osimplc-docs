@@ -16,8 +16,7 @@ Cuatro (4) entradas analógicas normalizadas, configurables individualmente en l
 
 ### E4DI
 
-Cuatro (4) entradas digitales, configurables individualmente como PNP (sink) o NPN
-(source) por medio de jumpers, señalizadas por LEDs.
+Cuatro (4) entradas digitales, configurables individualmente como PNP (sink) o NPN (source) por medio de jumpers, señalizadas por LEDs.
 
 ![E4DI](images/e4di.png)
 
