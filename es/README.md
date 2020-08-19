@@ -14,6 +14,7 @@
   * [Descargas](downloads.md)
   * [Manual LDmicro](LDmicro_manual.md)
   * [Manual OBootLin](OBootLin_manual.md)
+  * [Manual OSIMPLC-IDE](OSIMPLC-IDE_manual.md)
 
 * [English version](http://osimplc.com/docs/en)
 
