@@ -11,6 +11,7 @@
 > El objetivo de esta reorganización ha sido presentar las diferentes instrucciones agrupándolas en función del tipo de proceso o actividad que ejecutan, y por la complejidad en su implementación.  
 > También se han simplificado algunos de los gráficos complementarios incluídos en modo texto, para permitir su completa edición en formato Markdown (.md), y para facilitar la generación de código HTML para su presentación en la web sin requerir hipervínculos a archivos de imágenes externos.
 
+---
 
 ## INTRODUCCION
 
@@ -92,6 +93,7 @@ Lea atentamente la descripción de cada instrucción, aunque le parezca familiar
 
 Ver [LDmicro Wiki - PLC and safety](https://github.com/LDmicro/LDmicro/wiki/PLC-and-safety) y [LDmicro Wiki - PLC Cycle Time 0](https://github.com/LDmicro/LDmicro/wiki/PLC-Cycle-Time-0)  
 
+---
 
 ## OBJETIVOS ADICIONALES
 
@@ -105,9 +107,11 @@ He proporcionado un ejemplo de implementación del intérprete / VM, escrito en 
 
 Se ha añadido un nuevo objetivo "Controllino Maxi / Ext bytecode". Genera un archivo .xint interpretable por el software de PLC LDuino. Hasta ahora sólo el controlador Maxi PLC es soportado. Sin embargo, como el bytecode es genérico, se podría hacer la adaptación a cualquier otro PLC o tarjeta de la CPU. Vea el código fuente de LDuino para eso.
 
-## OPCIONES EN LINEA DE COMANDOS
+---
 
-`ldmicro.exe` normalmente se ejecuta sin opciones desde la línea de comandos. 
+## OPCIONES DESDE LINEA DE COMANDOS
+
+`ldmicro.exe` habitualmente se ejecuta sin opciones desde la línea de comandos. 
 
 Ésto significa que basta con hacer un acceso directo al programa o guardarlo en su escritorio, y hacer doble click en el ícono cuando desee ejecutarlo; a continuación, puede realizar toda la tarea de programación, asignación y compilación dentro del Entorno Gráfico de Usuario de LDmicro.
 
@@ -248,7 +252,7 @@ La marca de desbordamiento (Overflow|Underflow ó Carry/Borrow) es provista como
 
 Ver [Overflow_flag](https://en.wikipedia.org/wiki/Overflow_flag) y [Binary-overflow](https://www.allaboutcircuits.com/textbook/digital/chpt-2/binary-overflow/)  
 
-La marca de desbordamiento ROverflowFlagV indica que el resultado en complemento a dos de una operación con signo (aritmética, asignación, etc.) no cabe en el número de bits utilizado en la variable de destino de la operación, y señala un error que debe ser resuelto por el usuario.  
+La marca de desbordamiento ROverflowFlagV indica que el resultado en complemento a dos de una operación con signo (aritmética, asignación, etc.) no cabe en el número de bits utilizado en la variable destino de la operación, y señala un error que debe ser resuelto por el usuario.  
 
 Por ejemplo, si a una variable del tipo int8 (byte) dest = 127 (0x7f) se le agrega 1, se obtiene -128 (0x80), y la marca de desbordamiento ROverflowFlagV será establecida en 1.  
 Por el contrario, si a una variable int16 (word) dest = 127 (0x007f) se le agrega 1, se obtiene 128 (0x0080), y la marca de desbordamiento ROverflowFlagV no será afectada.  
@@ -362,9 +366,9 @@ IMPORTANTE: Para procesadores AVR, debe establecer los bits de configuración ma
 
 Terminología:
 
-* "Activado por Nivel" = la salida lógica del objeto es controlada por el nivel lógico leído en la entrada del mismo (ON = 1; OFF = 0).  
-* "Activado por Flanco" = la salida lógica del objeto cambia sólo en en el instante en que la entrada lógica cambia de un valor a otro. El cambio puede ser activado por el flanco positivo (cambio de 0 a 1) o activado por el flanco negativo (cambio de 1 a 0).  
-* La mayoría de los objetos de LDmicro son "Activados por Nivel", algunos objetos son "Activados por Flanco", p. ej. los contadores modifican el valor de su variable Cnt sólo al presentarse un flanco positivo en su entrada lógica (OBSOLETO, válido para versiones previas a la v.4.4.0).  
+* "Activado por Nivel": la salida lógica del objeto es controlada por el nivel lógico leído en la entrada del mismo (ON = 1; OFF = 0).  
+* "Activado por Flanco": la salida lógica del objeto cambia sólo en en el instante en que la entrada lógica cambia de un valor a otro. El cambio puede ser activado por el flanco positivo (cambio de 0 a 1) o activado por el flanco negativo (cambio de 1 a 0) de la señal de entrada.  
+* La mayoría de los objetos de LDmicro son "Activados por Nivel", algunos objetos son "Activados por Flanco".  
 
 ---
 
@@ -449,14 +453,14 @@ Esta instrucción debe ser siempre programada en el extremo derecho del escalón
 
 ---
 
-### BOBINA TELERRUPTOR  
+### BOBINA BIESTABLE  
 ```
          Yname         Rname  
       ----(T)----   ----(T)----  
 ```
 Esta instrucción controla el estado de salidas físicas (pines) y relés internos (marcas) del microcontrolador.  
 
-Una Bobina T (Trigger) es un telerruptor (conmutador, flip-flop) gobernado por flanco positivo. El estado de la salida de la bobina cambia al estado opuesto ante cada flanco positivo (ascendente) leído en su entrada, es decir en el instante en que la señal en su entrada lógica pasa 0 (OFF, False) a 1 (ON, True), y mantiene ese nuevo estado hasta que se detecte un nuevo flanco ascendente en la señal de entrada.  
+Una Bobina T (Trigger) es un biestable (conmutador, flip-flop) gobernado por flanco positivo en la entrada lógica. El estado de la salida de la bobina cambia al estado opuesto ante cada flanco positivo (ascendente) leído en su entrada, es decir en el instante en que la señal en su entrada lógica pasa 0 (OFF, False) a 1 (ON, True), y mantiene ese nuevo estado hasta que se detecte un nuevo flanco ascendente en la señal de entrada.  
 
 Esta instrucción debe ser siempre programada en el extremo derecho del escalón (rung). Instrucción Activada por Flanco (positivo).  
 
@@ -473,20 +477,20 @@ Esta instrucción debe ser siempre programada en el extremo derecho del escalón
                           |
 ```
 
+Esta instrucción siempre debe ser programada en el extremo derecho del escalón (rung).  
+
 ---
 
 > **NOTA:**  
 > Varias bobinas con el mismo 'YName' o 'RName' pueden ser mentalmente representadas como un circuito integrado por múltiples entradas y una única salida.  
-> Las bobinas normal e invertida transfieren directamente el estado de su entrada (normal o invertida) a su salida.  
+> 
+> Las bobinas normal e invertida transfieren inmediatamente el estado de su entrada (normal o invertida) a su salida.  
+> Las bobinas S, R y T retienen el estado de su salida.  
 
-Las bobinas S, R y T retienen el estado de su salida.  
+> Las bobinas SET y RESET son activadas por nivel, la bobina T es activada por el flanco positivo en la señal de entrada.  
+> Si antes de una bobina R, S se inserta la instrucción "OSR: ONE-SHOT RISING" o "OSF: ONE-SHOT FALLING", se obtiene un elemento activado por el flanco positivo o por el flanco negativo, respectivamente.  
 
-Las bobinas SET y RESET son activadas por nivel, la bobina T es activada por el flanco positivo.  
-Si antes de una bobina R, S se inserta la instrucción "OSR: ONE-SHOT RISING" ú "OSF: ONE-SHOT FALLING", se obtiene un elemento activado por el flanco positivo o por el flanco negativo.  
-
-Si se usan sólo las instrucciones R y S, se obtiene el clásico disparador RS. Si se agrega la instrucción T, se obtiene el más reciente disparador RST. Puede utilizar varias bobinas R...R, o varias entradas S...S con un mismo nombre en un mismo programa. Puede utilizar cualquier combinación de entradas para una bobina de salida física 'YName' o para un relé interno 'RName'.  
-
-Esta instrucción siempre debe ser programada en el extremo derecho del escalón (rung).  
+> Si se usan sólo las instrucciones R y S, se obtiene el clásico disparador RS. Si se agrega la instrucción T, se obtiene el más reciente disparador RST. Puede utilizar varias bobinas R...R, o varias entradas S...S con un mismo nombre en un mismo programa. Puede utilizar cualquier combinación de entradas para una bobina de salida física 'YName' o para un relé interno 'RName'.  
 
 ---
 
@@ -619,7 +623,7 @@ La variable "Tname"cuenta desde cero en unidades de tiempo de ciclo del programa
 ```
 Esta instrucción hace un seguimiento de cuánto tiempo su entrada de señal lógica ha estado en 1 (ON, True), sumando los tiempos parciales de activación. Si la señal en su entrada lógica ha sido 1 (ON, True) para una sumatoria de tiempos igual o mayor a el parámetro T, entonces la salida pasa a 1 (ON, True). De lo contrario, la salida es 0 (OFF, False).  
 
-La entrada no requiere estar activada en forma continua por el tiempo T, p. ej.  si el parámetro T = 2 s y la entrada es 1 durante 0,6 s, luego 0 durante 5,0 s, y luego 1 durante 1,4 s, entonces la salida será 1. 
+La entrada no requiere estar activada en forma continua por el tiempo T, p. ej.  si el parámetro T = 2 s y la entrada es 1 durante 0,6 s, luego 0 durante 5,0 s, y luego 1 durante 1,4 s, entonces la salida será 1.  
 
 Una vez que que la salida está activada en 1 (ON, True), permanecerá en ese estado incluso después de que la entrada vuelva a 0 (OFF, False), siempre y cuando la señal en la entrada haya sido 1 (ON, True) por un período total mayor al tiempo T. El tiempo de retardo es configurable.  
 Este temporizador debe ser restablecido programáticamente, utilizando la instrucción de RESET Timer/Counter --{RES}--.  
@@ -705,7 +709,7 @@ Si el valor Tname es igual al tiempo de ciclo del programa, el ciclo en la salid
 ```
 F=1/(2*Tcycle)  
 
-Si la señal en la entrada lógica de la instrucción es 1 (ON, True), produce un ciclo con frecuencia igual al inverso del tiempo de ciclo del PLC * 2.  
+Si la señal en la entrada lógica de la instrucción es 1 (ON, True), produce un ciclo con frecuencia igual al inverso del tiempo de ciclo del PLC * 2; es decir que la salida de la instrucción estará inaactiva (0, OFF) durante un ciclo de PLC, y activa (1, ON) durante el ciclo siguiente.  
 
 Si la señal en la entrada de la instrucción es 0 (OFF, False),la señal de salida siempre es 0 (OFF, False).  
 
@@ -862,7 +866,7 @@ Se pueden realizar también operaciones aplicables a variables generales (aritm�
 ```
 
 > **NOTA**:  
-> Si se desea realizar conteo ascendente con una variable que pueda sobrepasar por exceso el parámetro (var > par) y/o conteo descendente y sobrepasar por defecto el parámetro (var < par), ésto deberá implementarse por medio de rutinas generadas con instrucciones matemáticas (suma y resta), de evaluación de flanco, y de comparación contra el parámetro fijo o variable. P. ej.:
+> Si se desea realizar conteo ascendente con una variable que pueda sobrepasar por exceso el parámetro (var > par) y/o conteo descendente y sobrepasar por defecto el parámetro (var < par), deberá implementarse por medio de rutinas generadas con instrucciones matemáticas (suma y resta), de evaluación de flanco, y de comparación contra el parámetro fijo o variable. P. ej.:
 
 ```
   ||; Increasing variable = Count Up
@@ -951,15 +955,16 @@ Se pueden realizar también operaciones aplicables a variables generales (aritm�
 ### CONVERSOR TIEMPO A CONTADOR  
 
 ```
-         Tconst  
+         Tnew  
     --[T2CNT 10 ms]--  
 ```
-La instrucción  Conversor Tiempo a Contador toma la constante de tiempo de ciclo T en ms, la convierte en un valor de unidades de temporización y guarda el resultado en la variable Tconst para su posterior utilización como parámetro en contadores.  
+La instrucción  Conversor Tiempo a Contador toma la constante de tiempo de ciclo de PLC en ms, la convierte en un valor de unidades en los distintos temporizadores y guarda el resultado en la variable Tnew para su posterior utilización como parámetro en contadores.  
 
 Ver [TIME-to-COUNTER-converter](https://github.com/LDmicro/LDmicro/wiki/TIME-to-COUNTER-converter)
 
+---
 
-#### Actualización sobre contadores: versiones >= v.4.4.0  
+### Actualización sobre contadores: versiones >= v.4.4.0  
 Los contadores CTU, CTD, CTC y CTR en las versiones >= v.4.4.0 admiten más opciones de configuración:  
 
 1. Se puede utilizar una variable general como parámetro de un contador.  
@@ -997,6 +1002,7 @@ Puede utilizar la instrucción de evaluación de flanco positivo -{OSR}- para em
 
 Puede implementar la operación -{MOV 0, var}- en forma equivalente a una operación -{RES Cnt}-  
 
+---
 
 ### CONVERTIDOR ANALOGICO/DIGITAL  
 
@@ -1031,7 +1037,7 @@ En general no todos los pines estarán disponibles para uso con el convertidor A
 
 Esta instrucción siempre debe ser programada en el extremo derecho del escalón (rung).  
 
-
+---
 
 ### PWM: CONFIGURAR CICLO DE SERVICIO
 
@@ -1062,18 +1068,43 @@ Ver [LDmicro-PWM](https://github.com/LDmicro/LDmicro/wiki/LDmicro-PWM)
 
 ATENCION: si se requiere cambiar la frecuencia base del PWM (no su ciclo de servicio) durante la ejecución del programa en el microcontrolador, utilice la instrucción RESET PWM siguiente.  
 
+---
 
-### RESET PWM
+### PWM: RESTABLECER
 
 ```  
        PWM  
     --{RES}--  
 ```
-Si la señal en la entrada lógica de la instrucción 1 (ON, True), esta instrucción inhabilita la modulación de ancho de pulso PWM y establece permanentemente la salida de pulsos en nivel bajo (0, OFF).
+Si la señal en la entrada lógica de la instrucción es 1 (ON, True), la instrucción inhabilita la modulación de ancho de pulso PWM y establece la salida de pulsos en nivel bajo (0, OFF).  
 
-Permite configurar otra frecuencia base para la modulación de ancho de pulso PWM establecida mediante una instrucción SET PWM DUTY CYCLE previa; esta nueva configuración sólo se puede implementar mientras el PWM está deshabilitado mediante la ejecución de la instrucción RESET PWM.  
+Esta instrucción permite configurar otra frecuencia base para la modulación de ancho de pulso PWM, previamente establecida mediante una instrucción SET PWM DUTY CYCLE; esta nueva configuración sólo se puede implementar mientras el PWM está deshabilitado mediante la ejecución de la instrucción RESET PWM.  
 
 Esta instrucción siempre debe ser programada en el extremo derecho del escalón (rung).  
+
+---
+
+### TREN DE IMPULSOS
+
+```
+      [PULSER  counter   Ypulse]->  
+    --[   D1  D0 accel-decel   ]--  
+```
+
+Si la señal en la entrada lógica de la instrucción es 1 (ON, True), esta instrucción genera un tren de impulsos en el pin de salida Ypulse.  
+
+El campo Pulse counter establece la cantidad total de impulsos que se generarán; los campos Duration of 1 y Duration of 0 establecen la duración, medida en ciclos de PLC, del estado 1 (ON, True) y 0 (OFF, False) de cada impulso; el campo Accel/Decel Factor establece la aceleración y deceleración en el tren de impulsos y será un múltiplo de la duración de cada ciclo de PLC, con una tasa de cambio de +1 y -1 respectivamente; la variable Ypulse establece el pin de salida del tren de impulsos; la salida lógica de esta instrucción estará en 1 (ON, True) durante la ejecución del tren de impulsos.  
+
+---
+
+### PASO A PASO  
+
+```
+      [STEPPER step stepMax  Ystep]->  
+    --[P                    100  1]---  
+```
+
+**Instrucción en preparación**
 
 ---
 
@@ -1085,7 +1116,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 Cuando la condición de entrada de esta instrucción es 1 (ON, True), la variable especificada es automáticamente guardada (escrita) en la memoria EEPROM. Ésto significa que su valor se mantendrá incluso cuando el microcontrolador no está energizado (sin alimentación).  
 No hay necesidad de guardar explícitamente la variable en EEPROM; ésto sucederá automáticamente siempre que cambie su valor.  
 
-Después de la energización (alimentación) del microcontrolador, el valor guardado se carga automáticamente desde la EEPROM en la variable.  
+Después de la energización (alimentación) del microcontrolador, el valor guardado en la EEPROM se carga automáticamente en la variable en RAM.  
 
 > **NOTA:** Si una variable que cambia con frecuencia se hace persistente, la memoria EEPROM en el microcontrolador puede degradarse muy rápidamente, dado que sólo soporta un número limitado de escrituras (~100.000).  
 
@@ -1118,7 +1149,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
       {MUL dest  :=}       {DIV dv    :=}  
     --{ var * -990 }--   --{ dv / -10000}--  
 ```
-Si la señal en la entrada lógica en cada una de estas instrucciones es 1 (ON, True), la variable de destino será igual a la operación especificada entre los operandos.  
+Si la señal en la entrada lógica en cada una de estas instrucciones es 1 (ON, True), la variable destino será igual a la operación especificada entre los operandos.  
 
 Los operandos pueden ser variables (incluyendo variables de temporizador y contador) o constantes. Estas instrucciones utilizan variables con signo y sólo admiten números enteros. 
 
@@ -1126,7 +1157,7 @@ Una operación aritmética admite tener como variable destino la misma variable 
 
 Recuerde que el resultado se evalúa en cada ciclo cuando la condición de entrada es 1 (ON, True).
 
-Si está incrementando o decrementando una variable (es decir, si la variable de destino es también uno de los operandos), entonces usted probablemente no querrá que suceda ésto; típicamente deberá utilizar una instrucción de detección de flanco previa para que la instrucción se evalúe sólo al detectarse un flanco ascendente o descendente en su entrada lógica.  
+Si está incrementando o decrementando una variable (es decir, si la variable destino es también uno de los operandos), entonces usted probablemente no querrá que suceda ésto; típicamente deberá utilizar una instrucción de detección de flanco previa para que la instrucción se evalúe sólo al detectarse un flanco ascendente o descendente en su entrada lógica.  
 
 Si la señal en la entrada lógica de la instrucción es 0 (OFF, False), la variable "dest" no modifica su valor.  
 
@@ -1138,12 +1169,12 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 
 ---
 
-### OPERACION MODULO  
+### MODULO  
 ```
      {MOD dest:=}  
     --{src % 2}--  
 ```
-Si la señal en la entrada lógica de esta instrucción es 1 (ON, True), la variable de destino será igual al resto (sobrante, número entero positivo) de la división del Operando1 por el Operando2.
+Si la señal en la entrada lógica de esta instrucción es 1 (ON, True), la variable destino será igual al resto (sobrante, número entero positivo) de la división del Operando1 por el Operando2.
 
 Ejemplo: 7 % 3 = 1  
 
@@ -1195,12 +1226,12 @@ Si la entrada de señal de la instrucción es 0 (OFF, False), la operación de c
       {XOR  dest :=}       {NOT  dv :=  }  
     --{ var ^ 0xAA }--   --{ ~0b11001100}--  
 ```
-Si la señal en la entrada lógica de la instrucción es 1 (ON, True), la variable de destino será igual a la operación lógica entre los bits correspondientes (idéntica posición) de los operandos.
+Si la señal en la entrada lógica de la instrucción es 1 (ON, True), la variable destino será igual a la operación lógica ejecutada entre los bits correspondientes (idéntica posición) de los operandos.  
 
 Los operandos pueden ser variables (incluyendo variables de temporizador o contador) y/o constantes.  
-Recuerde que el resultado se evalúa en cada ciclo de programa mientras la condición de entrada sea verdadera.  
+Tenga en consideración que el resultado se evalúa en cada ciclo de programa mientras la condición de entrada sea verdadera.  
 
-Si la señal en la entrada lógica de la instrucción es 0 (OFF, False), la variable "dest" no modifica su valor.  
+Si la señal en la entrada lógica de la instrucción es 0 (OFF, False), la variable destino no modifica su valor.  
 
 Ver [Bitwise_operation](http://en.wikipedia.org/wiki/Bitwise_operation)  
 
@@ -1235,7 +1266,7 @@ Se debe programar
       {OR var  :=}
     --{var | 0x10}--
 ```
-**NO** se deben programar instrucciones SetBit ni ClrBit utilizando hexadecimales:  
+**NO** se deben utilizar hexadecimales para indicar el bit correspondiente, al programar instrucciones SetBit o ClrBit:  
 ```
           {var}  
     --{SetBit 0x10}-  NO ADMITIDO!!!  
@@ -1261,17 +1292,17 @@ La operación --{IfBitClr var, 0}-- es equivalente a la expresión "si la variab
 
 ---
 
-**INSTRUCCIONES DE DESPLAZAMIENTO DE BITS: SHL, SHR, SR0, ROL, ROR**  
+### INSTRUCCIONES DE DESPLAZAMIENTO DE BITS: SHL, SHR, SR0, ROL, ROR  
 
 Si la señal en la entrada lógica de la instrucción es 1 (ON, True), los bits de la variable origen son desplazados en la dirección correspondiente y asignados a la variable destino. La variable destino puede ser la misma que la variable origen.  
 
 Los operandos que indican la cantidad de posiciones del desplazamiento pueden ser variables (incluyendo variables de temporizador o contador) o constantes.  
 
-Recuerde que el resultado se evalúa en cada ciclo de programa mientras la condición de entrada sea verdadera.  
+Tenga en consideración que el resultado se evalúa en cada ciclo de programa mientras la condición de entrada sea verdadera.  
 
-Si la señal en la entrada lógica de la instrucción es 0 (OFF, False), la variable "dest" no modifica su valor.  
+Si la señal en la entrada lógica de la instrucción es 0 (OFF, False), la variable destino no modifica su valor.  
 
-> **Nota referida a los gráficos de las operaciones:**
+> **Nota referida a los gráficos de las operaciones:**  
 > MSB = Most Significant Bit (bit más significativo o de mayor peso)  
 > LSB = Least Significant Bit (bit menos significativo o de menor peso)
 
@@ -1375,16 +1406,16 @@ Si la señal en la entrada lógica de la instrucción es 0 (OFF, False), la vari
 
 ---
 
-### INTERCAMBIO DE BYTES Y CUARTETOS  
+### INTERCAMBIO DE BYTES Y TETRADAS  
 ```
        {dest:=}  
     --{SWAP src}--  
 ```
-Si la señal en la entrada lógica de la instrucción es 1 (ON, True), esta instrucción intercambia bytes y cuartetos (nibbles, tétradas) de una variable.
+Si la señal en la entrada lógica de la instrucción es 1 (ON, True), esta instrucción intercambia bytes y tétradas (nibbles, cuartetos) de una variable.
 
 En función del tamaño en bytes de la variable (alcance, span), el resultado es diferente:  
 
-1 byte: intercambia los cuartetos dentro de un int8 (BYTE), p. ej. 0x73 -> 0x37  
+1 byte: intercambia las tétradas dentro de un int8 (BYTE), p. ej. 0x73 -> 0x37  
 ```
     MSB       bits       LSB
     7  6  5  4  3  2  1  0
@@ -1417,7 +1448,7 @@ En función del tamaño en bytes de la variable (alcance, span), el resultado es
 9 <-> 1  
 8 <-> 0  
 
-3 bytes: intercambia los cuartetos del byte central, y también ambos bytes de los extremos de un int24, p. ej,. 0x775A33 -> 0x33A577
+3 bytes: intercambia las tétradas del byte central, y también ambos bytes de los extremos de un int24, p. ej,. 0x775A33 -> 0x33A577
 ```
     MSB                             bits                          LSB
      23 22 21 20 19 18 17 16 15 14 13 12 11 10  9  8 7 6 5 4 3 2 1 0
@@ -1460,7 +1491,7 @@ Si la señal en la entrada lógica de la instrucción es 0 (OFF, False), la vari
 
 ---
 
-### REGISTRO DE DESPLAZAMIENTO CON VARIABLES
+### REGISTRO DE DESPLAZAMIENTO CON VARIABLES  
 ```
      {SHIFT REG}  
     --{var0..3}--  
@@ -1564,7 +1595,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 
 ---
 
-### CIRCUITO CERRADO, CIRCUITO ABIERTO
+### CIRCUITO CERRADO, CIRCUITO ABIERTO  
 ```  
     --+---+--    --+   +--  
 ```
@@ -1603,7 +1634,7 @@ a) La instrucción GOTO(n), en la que "n" es un número entero, causa un salto e
 * Si n es menor que 0 (n<0) la ejecución del programa salta a la dirección 0 de la memoria de programa: se produce un restablecimiento por software (SOFT RESET) del microcontrolador.
 * Si n es mayor que el número de escalones en el esquema Ladder (n>max_rung), la ejecución del programa salta todas las instrucciones subsiguientes y recomienza el ciclo de PLC.  
 
-b) La instrucción GOTO(name), en la que "name" es el nombre asignado a la etiqueta en una instruccion LABEL(name), causa un salto en la ejecución del programa al escalón (rung) en el que se ha programado la correspondiente instrucción destino LABEL(name).  
+b) La instrucción GOTO(name), en la que "name" es el nombre asignado a la etiqueta en una instruccion LABEL(name), causa un salto en la ejecución del programa al escalón (rung) en el que se ha programado la correspondiente instrucción de destino LABEL(name).  
 
 Esta instrucción siempre debe ser programada en el extremo derecho del escalón (rung).  
 
@@ -1615,9 +1646,9 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
     --{LABEL}--  
 ```
 
-La instrucción LABEL(name) identifica el punto de destino para el salto en la ejecución del programa generado por una instrucción GOTO(name).  
+La instrucción LABEL(name) identifica el punto de destino para el salto en la ejecución del programa, generado por una instrucción GOTO(name).  
 
-Los nombres asignados a cada una de las instrucciones LABEL(name) y a su correspondiente llamada GOTO(name) deben ser únicos en cada programa, y distinguen mayúsculas y minúsculas.  
+Los nombres asignados a cada una de las instrucciones LABEL(name) y a su correspondiente llamada GOTO(name) deben ser únicos en cada programa, distinguen mayúsculas y minúsculas, y no deben comenzar con un número.  
 
 ---
 ### SUBPROG, ENDSUB, GOSUB, RETURN  
@@ -1654,7 +1685,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
     --{RETURN}--  
 ```
 La instrucción RETURN permite interrumpir el procesamiento del subprograma SUBPROG(name) sin necesidad de completar su ejecución, o sea sin necesidad de alcanzar la correspondiente instrucción ENDSUB(name).  
-Debe utilizarse siempre en forma condicional, es decir en función de la señal en su entrada lógica provista por una instrucción previa.  
+Debe utilizarse siempre en forma condicional, es decir en función de la señal en su entrada lógica, provista por una instrucción previa.  
 
 La instrucción RETURN puede ser programada en diferentes escalones (rungs) del subprograma, entre las correspondientes instrucciones SUBPROG(name) y ENDSUB(name), permitiendo diferentes condiciones de finalización del procesamiento del subprograma.  
 
@@ -1689,7 +1720,7 @@ El comando LOCK es un método para llevar a un punto muerto la ejecución del pr
 
 El microcontrolador ejecutará dicho bucle infinito, pero si el WDT ha sido previamente habilitado modificando los bits de configuración del microcontrolador, puede restablecer la ejecución del programa.  
 
-Sólo el WDT o un restablecimiento externo (mediante hard reset por !MCLR, o corte y restablecimiento de la alimentación del MCU) pueden descongelar el programa después de ejecutado el comando LOCK.  
+Sólo el WDT o un restablecimiento externo (mediante hard reset por !MCLR, o por corte y restablecimiento de la alimentación del MCU) pueden desbloquear el programa después de ejecutado el comando LOCK.  
 
 ---
 
@@ -1708,9 +1739,7 @@ Puede utilizarse para ahorrar energía cuando la alimentación del microcontrola
 La operación SLEEP no afecta a otros pines de Entrada/Salida del microcontrolador ni a otras operaciones de LDmicro.  
 
 > **Nota:**  
-> La ejecución de la instrucción SLEEP alarga el tiempo de ciclo del PLC y los temporizadores TON, TOF, RTO, TCY.  
-
-Ésto puede romper el flujo normal de trabajo del programa, provocando un error en la aplicación.  
+> La ejecución de la instrucción SLEEP alarga el tiempo de ciclo del PLC y la ejecución de los temporizadores TON, TOF, RTO, TCY. Ésto puede romper el flujo normal de trabajo del programa, provocando un error en la aplicación.  
 
 Esta instrucción siempre debe ser programada en el extremo derecho del escalón (rung).  
 
@@ -1723,7 +1752,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 ```
 El generador de números pseudo-aleatorios devuelve un número al azar dentro del rango completo de la variable "var".  
 
-Si la señal en la entrada lógica de esta instrucción es 1 (ON, True), la variable de destino "var" tendrá el siguiente número pseudo-aleatorio calculado por el generador congruencial lineal (LCG). 
+Si la señal en la entrada lógica de esta instrucción es 1 (ON, True), la variable destino "var" tendrá el siguiente número pseudo-aleatorio calculado por el generador congruencial lineal (LCG). 
 
 Si la señal en la entrada lógica de esta instrucción es 0 (OFF, False), entonces nada sucede.  
 
@@ -1754,14 +1783,14 @@ Ver [Linear_congruential_generator](https://en.m.wikipedia.org/wiki/Linear_congr
 ```
 El generador de números pseudo-aleatorios se inicializa utilizando el argumento pasado como newSeed (semilla).  
 
-Si la señal en la entrada lógica de esta instrucción es 1 (ON, True), la variable de destino $seed_Rand será igual a la variable de origen o la constante.  
+Si la señal en la entrada lógica de esta instrucción es 1 (ON, True), la variable destino $seed_Rand será igual a la variable de origen o la constante.  
 
 Si la señal en la entrada lógica de esta instrucción es 0 (OFF, False), entonces nada sucede.  
 Dos inicializaciones diferentes con la misma semilla generarán la misma sucesión de resultados en llamadas posteriores a RAND.  
 
 Si la semilla se pone a 1, el generador 'Rand' se reinicializa a su valor inicial y produce los mismos valores que antes de cualquier llamada a RAND o SRAND.  
 
-Las fuentes de entropía para la generación de la variable newSeed (semilla) pueden ser lecturas de la variable de un ADC (máxime si el pin de entrada no está conectado a circuito alguno y recibe inducción por fuentes externas), temporizadores, valores de RAND anteriores guardados en EEPROM, etc.  
+Las fuentes de entropía para la generación de la variable newSeed (semilla) pueden ser lecturas de la variable de un ADC (especialmente si el pin de entrada no está conectado a circuito alguno y recibe inducción por fuentes externas), temporizadores, valores de RAND anteriores guardados en EEPROM, etc.  
 
 ---
 
@@ -1771,13 +1800,13 @@ Las fuentes de entropía para la generación de la variable newSeed (semilla) pu
     --{C          src}--  
 ```
 
-Si la señal en la entrada lógica de esta instrucción es 1 (ON, True), la variable destino "dest" destino un valor binario abcdefgP que controlará la activación de los segmentos y el punto decimal del display LED de 7 segmentos.  
+Si la señal en la entrada lógica de esta instrucción es 1 (ON, True), la variable destino "dest" será un valor binario abcdefgP que controlará la activación de los segmentos y el punto decimal del display LED de 7 segmentos.  
 
 La variable "src" debe estar en el rango 0...127 ó 0...128, y usualmente puede tener un tamaño de 2 bytes, o de 1 byte si no utilizará el carácter ° (grado), código ASCII 128.  
 
 Utilice el parámetro A ó C de la instrucción para especificar cuál tipo de conexión común (Ánodo o Cátodo) será utilizada.  
 
-Se puede asignar un variable de acceso directo "#PORTx" como variable destino, de modo de controlar en forma directa un display conectado a los pines del puerto correspondiente, sin necesidad de utilizar instrucciones intermedias.  
+Se puede asignar un variable de acceso directo "#PORTx" como variable "dest", de modo de controlar en forma directa un display conectado a los pines del puerto correspondiente, sin necesidad de utilizar instrucciones intermedias.  
 
 Los pines de salida de dicho puerto podrían conectarse a directamente los ánodos (o cátodos) del display LED de 7 segmentos, a través de resistores de limitación de corriente.  
 
@@ -1846,16 +1875,26 @@ Si la señal en la entrada lógica de esta instrucción es 1 (ON, True), la inst
 > El número decimal 100 (0x64) será convertido en código BCD en notación hexadecimal 0x010000.  
 
 
-Ver [Binary-coded_decimal](https://en.wikipedia.org/wiki/Binary-coded_decimal)
+Ver [Binary-coded_decimal](https://en.wikipedia.org/wiki/Binary-coded_decimal)  
+
+---
+
+### CONVERSOR BCD A BINARIO  
+```
+  {BCD2BIN dest:=}  
+    --{src}--  
+```
+Si la señal en la entrada lógica de esta instrucción es 1 (ON, True), la instrucción convierte el código BCD de la variable "src" en un valor binario y lo transfiere a la variable "dest".  
 
 ---
 
 ### CODIFICADOR DE CUADRATURA (QUAD ENCODER)
 ```  
-      ~~[XqA0    XqB0&nbsp    qDir0]-  
+      ~~[XqA0      XqB0       qDir0]-  
     --\[XqZ0   QUAD ENCOD   qCount0]^--  
 ```
-La instrucción Codificador de Cuadratura toma dos señales cuadradas desplazadas en 90° (señales A y B codificadas en cuadratura) y una tercera señal de reposición (señal Z) desde un dispositivo encoder rotativo incremental o lineal, y provee como salidas la variable de un contador interno de la instrucción, un pulso positivo en su salida lógica cuando hay un cambio en dicha variable, y una salida de señal en un relé interno R ó un pin Y del microcontrolador, para indicar la dirección de conteo.  
+La instrucción Codificador de Cuadratura toma dos señales cuadradas desplazadas en 90° (señales A y B codificadas en cuadratura) y una tercera señal de reposición (señal Z) desde un dispositivo encoder incremental rotativo o lineal.  
+Provee como salidas la variable del contador interno de la instrucción, un pulso positivo en su salida lógica cuando hay un cambio en dicha variable, y una salida de señal en un relé interno R ó un pin Y del microcontrolador, para indicar la dirección de conteo (1 = ascendente, 0 = descendente).  
 ```
                         move ->             |            <- move
          ^
@@ -1893,15 +1932,15 @@ Los rebotes de señal (bounces) que pudieran producirse en los pulsos de entrada
 
 La entrada lógica para la señal Z es opcional y puede dejarse vacía (borrando el nombre de la variable asignada por defecto en la instrucción), sin asignarla a pin de entrada en el microcontrolador.  
 
-La salida lógica para la señal Dir es opcional y puede dejarse vacía (borrando el nombre de la variable asignada por defecto en la instrucción), sin asignarla a pin de salida en el microcontrolador.  
+La salida lógica para la señal Dir es opcional y puede dejarse vacía (borrando el nombre de la variable asignada por defecto en la instrucción), sin asignarla a relé interno o pin de salida en el microcontrolador.  
 
 Si la señal en la entrada lógica de la instrucción es 1 (ON, True), entonces los pulsos en las entradas A, B y Z son decodificados y asignados al valor de la variable del contador interno de la instrucción (qCount0 por defecto).  
 
 La instrucción Codificador de Cuadratura ejecuta conteo doble, leyendo las transiciones (flancos positivos y negativos) que aparecen en la señal B y evaluando simultáneamente el nivel (0, 1) de la señal A.  
 
-Cuando un flanco en la señal lógica en la entrada B genera un conteo, se modificará la variable del contador interno qCount0 (incrementando o decrementando), se generará un pulso con duración de un ciclo de PLC en la salida lógica de la instrucción, y la señal en la salida opcional Dir será 1 (ON True) si el contador es incrementado, y 0 (OFF, False) si es decrementado.  
+Cuando un flanco en la señal lógica en la entrada B genera un conteo, se modificará la variable del contador interno qCount0 (incrementando o decrementando), se generará un pulso con duración de un ciclo de PLC en la salida lógica de la instrucción, y la señal en la salida opcional Dir será 1 (ON, True) si el contador es incrementado, y 0 (OFF, False) si es decrementado.  
 
-El valor actual de la variable interna de conteo qCount0 puede leerse como en cualquier otra variable de contador, utilizando la instrucción MOV, y luego ejecutar sobre la variable destino las operaciones aritméticas y de comparación necesarias para la aplicación.  
+El valor actual de la variable interna de conteo qCount0 puede leerse como cualquier otra variable de contador, utilizando la instrucción MOV, y luego ejecutar sobre la variable destino las operaciones aritméticas y de comparación necesarias para la aplicación.  
 
 No es recomendado utilizar la instrucción MOV para asignar un valor a la variable del contador interno de la instrucción, a menos que resulte imprescindible para la aplicación. 
 
@@ -1990,8 +2029,7 @@ El parámetro "Number of bytes to receive/send" debe ser igual o menor que el ta
 
 El valor 1 es compatible con versiones anteriores de LDmicro.  
 
-El parámetro "Wait until all bytes are received/transmitted:" controla el algoritmo
-de recepción/transmisión: si es igual a 1, todos los bytes son recibidos/transmitidos en un solo paquete; si es igual a 0, sólo se recibe/transmite un byte por ciclo de escaneo del PLC.  
+El parámetro "Wait until all bytes are received/transmitted:" controla el algoritmo de recepción/transmisión: si es igual a 1, todos los bytes son recibidos/transmitidos en un solo paquete; si es igual a 0, sólo se recibe/transmite un byte por ciclo de escaneo del PLC.  
 El valor 0 es compatible con versiones anteriores de LDmicro.  
 
 Cuando todos los bytes han sido recibidos/transmitidos, la salida de la instrucción será 1 (ON, True) durante un ciclo del PLC.  
