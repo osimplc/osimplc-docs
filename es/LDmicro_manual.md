@@ -4,8 +4,8 @@
 
 
 
-> Esta traducción del manual de LDmicro al español ha sido editada específicamente para su utilización con OSIMPLC, en base al contenido del archivo manual.txt en inglés provisto con la descarga de la versión v.5.3.0.1 de LDmicro.  
-> Esta edición pretende corregir, ampliar y mejorar la traducción original del manual en español, provista como manual-es.txt en dicha versión del programa.
+> Esta traducción del manual de LDmicro al español ha sido editada específicamente para su utilización con OSIMPLC, en base al contenido del archivo manual.txt en inglés provisto con la descarga de la versión v.5.4.0.4 de LDmicro.  
+> Esta edición pretende ampliar, corregir y mejorar la traducción original del manual en español, provista como manual-es.txt en dicha versión del programa.
 > 
 > Al editar la presente versión, se ha modificado la organización en la presentación de los diferentes ítems, en particular la referida a las diferentes instrucciones Ladder implementadas por LDmicro.  
 > El objetivo de esta reorganización ha sido presentar las diferentes instrucciones agrupándolas en función del tipo de proceso o actividad que ejecutan, y por la complejidad en su implementación.  
@@ -59,9 +59,7 @@ Esto resulta más intuitivo para los programadores con conocimiento de teoría d
 
 * El compilador lógico del lenguaje de contactos se encarga de cuándo, dónde y cómo se deben recalcular los estados del sistema.  
 
-No es necesario escribir código para determinar cuándo las salidas deben actualizarse p. ej. sobre la base de un cambio en las entradas o en un temporizador, y no es necesario especificar el orden en que estos cálculos deben tener lugar.  
-
-Las herramientas del PLC hacen eso por usted.  
+No es necesario escribir código para determinar cuándo las salidas deben actualizarse p. ej. sobre la base de un cambio en las entradas o en un temporizador, y no es necesario especificar el orden en que estos cálculos deben tener lugar. Las herramientas del PLC hacen eso por usted.  
 
 LDmicro compila lógica de contactos para PIC16 o código AVR. Los siguientes microcontroladores son soportados:  
 
@@ -105,20 +103,20 @@ Por último, LDmicro puede generar bytecode independiente del procesador para un
 
 He proporcionado un ejemplo de implementación del intérprete / VM, escrito en C estandard. Esta meta funcionará para casi cualquier plataforma, siempre y cuando usted pueda suministrar su propia VM. Esto podría ser útil para aplicaciones en las que desea usar la lógica ladder como un "lenguaje de scripting" para personalizar un programa. Vea los comentarios en el ejemplo de intérprete para más detalles.  
 
-Se ha añadido un nuevo objetivo "Controllino Maxi / Ext bytecode". Genera un archivo .xint interpretable por el software de PLC LDuino. Hasta ahora sólo el controlador Maxi PLC es soportado. Sin embargo, como el bytecode es genérico, se podría hacer la adaptación a cualquier otro PLC o tarjeta de la CPU. Vea el código fuente de LDuino para eso.
+Se ha añadido un nuevo objetivo "Controllino Maxi / Ext bytecode". Genera un archivo .xint interpretable por el software de PLC LDuino. Hasta ahora sólo el controlador Maxi PLC es soportado. Sin embargo, como el bytecode es genérico, se podría hacer la adaptación a cualquier otro PLC o tarjeta de la CPU. Vea el código fuente de LDuino para eso.  
 
 ---
 
 ## OPCIONES DESDE LINEA DE COMANDOS
 
-`ldmicro.exe` habitualmente se ejecuta sin opciones desde la línea de comandos. 
+`ldmicro.exe` habitualmente se ejecuta desde la línea de comandos sin opciones.  
 
-Ésto significa que basta con hacer un acceso directo al programa o guardarlo en su escritorio, y hacer doble click en el ícono cuando desee ejecutarlo; a continuación, puede realizar toda la tarea de programación, asignación y compilación dentro del Entorno Gráfico de Usuario de LDmicro.
+Ésto significa que basta con hacer un acceso directo al programa o guardarlo en su escritorio, y hacer doble click en el ícono cuando desee ejecutarlo; a continuación, puede realizar toda la tarea de programación, asignación y compilación dentro del Entorno Gráfico de Usuario de LDmicro.  
 
 Si en la línea de comandos se pasa a LDmicro un nombre de archivo único (por ejemplo, 'ldmicro.exe asd.ld'), entonces LDmicro intentará abrir el archivo "asd.ld", si existe. Se produce un error si "asd.ld" no existe.  
-Ésto significa que se puede asociar ldmicro.exe con archivos .ld, para que se ejecute automáticamente al hacer doble click en un archivo .ld.
+Ésto significa que se puede asociar ldmicro.exe con archivos .ld, para que se ejecute automáticamente al hacer doble click en un archivo .ld.  
 
-Si se pasa argumentos de línea de comandos a LDmicro en la forma `Ldmicro.exe / c src.ld dest.hex`, entonces el ejecutable intenta compilar `src.ld`, y guarda la salida como `dest.hex`
+Si se pasa argumentos de línea de comandos a LDmicro en la forma `Ldmicro.exe / c src.ld dest.hex`, entonces el ejecutable intenta compilar `src.ld`, y guarda la salida como `dest.hex` .  
 
 LDmicro finaliza después de compilar, tanto si la compilación resultó exitosa o no. Los mensajes se imprimen en la consola. Este modo sólo es útil cuando se ejecuta LDmicro desde línea de comandos.  
 
@@ -128,7 +126,7 @@ Si se ejecuta LDmicro sin argumentos, se comienza con un archivo de programa vac
 
 ## CONCEPTOS BASICOS
 
-LDmicro utiliza su propio formato interno para el programa; no puede importar lógica de cualquier otra herramienta o programa equivalente.
+LDmicro utiliza su propio formato interno para el programa; no puede importar lógica de cualquier otra herramienta o programa equivalente.  
 
 Si no se cargó un programa ya existente, al ejecutar LDmicro se iniciará un programa con un diagrama de contactos vacío.  
 Puede modificar el programa insertando o eliminando instrucciones.  
@@ -149,29 +147,30 @@ La primera letra de un nombre (variable) indica qué tipo de objeto es.
 
 ### Variables (objetos) actuales en LDmicro
 
-* Xname - X: pin de entrada digital en el microcontrolador
-* Yname - Y: pin de salida digital en el microcontrolador
-* Rname - R: relay interno o marca, un bit en la memoria del microcontrolador
-* Tname - T: temporizado a la conexión, a la desconexión, acumulativo, etc.
-* Cname - C: contador incremental, decremental, circular, etc.
-* Aname - A: variable de un entero leída desde un convertidor A/D
-* Pname - P: salida PWM en el microcontrolador
-* Mname - M: bobina discreta MODBUS
-* Iname - I: entrada discreta MODBUS
-* Hname - H: registro Holding MODBUS
-* Name - nombre: variable de uso general (un entero con signo). Tipos actualmente soportados: byte, word, word+nibble, dword; 1, 2, 3 y 4 bytes.
+* Xname - X: pin de entrada digital en el microcontrolador  
+* Yname - Y: pin de salida digital en el microcontrolador  
+* Rname - R: relay interno o marca, un bit en la memoria del microcontrolador  
+* Tname - T: temporizado a la conexión, a la desconexión, acumulativo, etc.  
+* Cname - C: contador incremental, decremental, circular, etc.  
+* Aname - A: variable de un entero leída desde un convertidor A/D  
+* Pname - P: salida PWM en el microcontrolador  
+* Mname - M: bobina discreta MODBUS  
+* Iname - I: entrada discreta MODBUS  
+* Hname - H: registro de variable MODBUS  
+* Name - nombre: variable de uso general (un entero con signo). Tipos actualmente soportados: byte, word, word+nibble, dword; 1, 2, 3 y 4 bytes.  
 
 **IMPORTANTE:**
 
 * Los nombres de las variables pueden consistir en letras, números y subrayados "_".  
 * El nombre de una variable no debe comenzar con un número.  
 * En los nombres de variables se distinguen mayúsculas y minúsculas (case sensitive).  
+* No utilice las letras mayúsculas X, Y, R, T, C, A, P, M, I, H, como letra inicial de los nombres de variables de uso general.  
 
 Elija el resto del nombre de la variable para que describa convenientemente lo que hace el objeto, y de modo que sea único dentro del programa.  
 El mismo nombre siempre se refiere al mismo objeto dentro del programa.  
 
 Por ejemplo, sería un error tener un retardo a la conexión (TON) llamado "Tespera" y un retardo a la desconexión (TOF) llamado también "Tespera" en el mismo programa, ya que cada temporizador necesita su propio espacio de memoria.  
-Por otro lado, sería correcto tener un temporizador retentivo (RTO) llamado "Tsumar" y una instrucción de restablecimiento (RES) asociada con "Tsumar", ya que en este caso se desea que ambas instrucciones trabajen con el mismo temporizador.
+Por otro lado, sería correcto tener un temporizador retentivo (RTO) llamado "Tsumar" y una instrucción de restablecimiento (RES) asociada con "Tsumar", ya que en este caso se desea que ambas instrucciones trabajen con el mismo temporizador.  
 
 ### Direccionamiento directo e indirecto a los registros del microcontrolador   
 
@@ -194,9 +193,9 @@ Por otro lado, sería correcto tener un temporizador retentivo (RTO) llamado "Ts
 
 Ver [LDmicro Wiki - Indirect addressing](https://github.com/LDmicro/LDmicro/wiki/LDmicro-indirect-addressing)  
 
-Las instrucciones disponibles para variables generales (MOV, ADD, EQU, etc.) pueden ejecutarse sobre variables con cualquier nombre, inclusive las que comienzan con T (temporizadores), C (contadores). 
+Las instrucciones disponibles para variables generales (MOV, ADD, EQU, etc.) pueden ejecutarse sobre variables con cualquier nombre, inclusive las que comienzan con T (temporizadores), C (contadores).  
 
-Ésto significa que pueden acceder a objetos como temporizadores y a contadores para realizar operaciones (comparaciones, aritméticas, etc.) con los valores actuales de sus variables.  
+Ésto significa que pueden acceder a objetos como temporizadores y a contadores para realizar operaciones (comparaciones, cálculos aritméticos, etc.) con los valores actuales de sus variables.  
 
 A veces ésto puede ser muy útil; por ejemplo, usted podría comprobar si el conteo de un temporizador está dentro de un rango determinado.
 
@@ -271,7 +270,7 @@ La marca de superposición indica que ha cambiado el signo en el resultado de la
 
 Por ejemplo, ocurre traslapo cuando a -1 (0xf..f) se le suma 1 (o se le resta -1),se obtendrá 0 (0x0..0), todos los dígitos en uno (1 )en la variable cambian a cero (0).  También ocurre traslapo cuando a 0 (0x0..0) se le resta 1 (o se le suma -1), se obtendrá 1 (0xF..F), todos los dígitos en cero (0) cambian a uno (1).  
 
-Otro ejemplo: ocurre traslapo cuando a -10 se le suma 15 (o se le resta -15), se obtendrá 5; la variable origen negativa cambiará a un resultado positivo. También ocurre traslapo cuando a 10 se le resta 15 (o se le suma -15), se obtendrá -5; la variable origen positiva cambiará a un resultado negativo.
+Otro ejemplo: ocurre traslapo cuando a -10 se le suma 15 (o se le resta -15), se obtendrá 5; la variable origen negativa cambiará a un resultado positivo. También ocurre traslapo cuando a 10 se le resta 15 (o se le suma -15), se obtendrá -5; la variable origen positiva cambiará a un resultado negativo.  
 
 ---
 
@@ -302,7 +301,7 @@ Para ello, se debe generar el archivo .hex (formato Intel IHEX) mediante la comp
 
 En primer término, deberá seleccionar el modelo del microcontrolador en el menú  Configuración -> Microcontrolador.  
 
-Tenga muy en consideración que algunos modelos de microcontroladores actualmente soportados por LDmicro son comercializados en diferentes formatos (DIP, QFP, etc.).
+Tenga muy en consideración que algunos modelos de microcontroladores actualmente soportados por LDmicro son comercializados en diferentes formatos (DIP, QFP, etc.).  
 
 En caso de utilizar un microcontrolador compatible en algún formato diferente al presentado en la lista, asigne las entradas y salidas en el programa de usuario a los pines correspondientes de acuerdo a su función, Puerto y número dentro del mismo; no las asigne según el número de pin en la huella (footprint) del circuito integrado.  
 
@@ -794,7 +793,7 @@ La instrución RETARDO causa una interrupción por un tiempo equivalente a n mic
 
 La instrucción RETARDO no utiliza ningún temporizador ni contador.  
 Las operaciones básicas del microcontrolador NOP() y JMP(dirección actual + 1) son utilizadas para generar la interrupción.  
-    
+
 Ver [DELAY-us](https://github.com/LDmicro/LDmicro/wiki/DELAY-us)  
 
 ---
@@ -1031,7 +1030,7 @@ Esta variable puede ser manipulada con las mismas operaciones que se pueden efec
 
 Puede utilizar operaciones matemáticas para convertirla a unidades más convenientes (unidades de ingeniería), pero recuerde que estará utilizando operaciones aritméticas sobre enteros.  
 
-Asigne un pin a la variable "Aname" de la misma manera que asigna un pin a una entrada o salida digital, haciendo doble click en su nombre en la lista de objetos en la parte inferior de la ventana.
+Asigne un pin a la variable "Aname" de la misma manera que asigna un pin a una entrada o salida digital, haciendo doble click en su nombre en la lista de objetos en la parte inferior de la ventana.  
 
 En general no todos los pines estarán disponibles para uso con el convertidor A/D. El software no le permitirá asignar pines que no diponen de ADC a una entrada analógica.  
 
@@ -1039,7 +1038,7 @@ Esta instrucción siempre debe ser programada en el extremo derecho del escalón
 
 ---
 
-### PWM: CONFIGURAR CICLO DE SERVICIO
+### MODULACION DE ANCHO DE PULSO (PWM): CONFIGURAR CICLO DE SERVICIO
 
 ```  
        duty_cycle  
@@ -1070,7 +1069,7 @@ ATENCION: si se requiere cambiar la frecuencia base del PWM (no su ciclo de serv
 
 ---
 
-### PWM: RESTABLECER
+### MODULACION DE ANCHO DE PULSO (PWM): RESTABLECER
 
 ```  
        PWM  
@@ -2043,7 +2042,7 @@ Ver [UART communication FAQ part 2](https://github.com/LDmicro/LDmicro/wiki/UART
           var  
     --{UART SENDn}--  
 ```
-Si la señal en la entrada lógica de esta instrucción es 1 (ON, True), entonces UART SEND escribirá una variable de un byte en formato binario ("crudo") en el buffer de salida de la UART.  
+Si la señal en la entrada lógica de esta instrucción es 1 (ON, True), entonces UART SENDn escribirá una variable de un byte en formato binario ("crudo") en el buffer de salida de la UART.  
 Se envía un solo byte por cada ciclo de PLC, al igual que en la instrucción ENVIAR CADENA FORMATEADA POR UART.  
 
 La salida de la instrucción es 1 (ON, True) si el UART está ocupado (transmitiendo actualmente el byte en modo binario), y 0 (OFF, False) en caso contrario.  

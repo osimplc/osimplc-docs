@@ -117,15 +117,15 @@ Estos scripts habilitan el menú Compile > flashMcu (F9) de LDmicro, llamando en
 
 1. Establezca la configuración de hardware de su aplicación: tipo de microcontrolador, módulos de salidas (sólo digitales ó mixtas con salida analógica controlada por PWM), módulos de expansión.
 2. Ejecute el programa LDmicro, lanzándolo desde su archivo de escritorio, acceso directo, o mediante doble click en su archivo ejecutable.  
-3. Seleccione el menú File > Open, y mediante el cuadro de diálogo navegue hasta el directorio OSIMPLC > Programs > Templates.  
-4. Seleccione y abra la plantilla que se corresponda con la configuración de hardware de su aplicación.
-5. Una vez abierta la plantilla SIN MODIFICAR, mediante el menú File > Save as... guárdela como un archivo nuevo en el directorio superior Programs, con un nombre descriptivo adecuado a su aplicación.  
+3. **Seleccione el menú File > Open, y mediante el cuadro de diálogo navegue hasta el directorio OSIMPLC > Programs > Templates.**  
+4. **Seleccione y abra la plantilla que se corresponda con la configuración de hardware de su aplicación.**  
+5. **Una vez abierta la plantilla corrrespondiente, SIN MODIFICARLA, mediante el menú File > Save as... guárdela como un archivo nuevo en el directorio superior Programs, con un nombre descriptivo adecuado a su aplicación.** Al guardar su aplicación en el directorio Programs, habilitará a OSIMPLC-IDE a compilar el archivo .hex en ese mismo directorio, y permitirá la descarga del código-máquina en OSIMPLC mediante los scripts que llaman a los programas de transferencia correspondientes desde el menú Compile > flashMcu (F9), sin necesidad de ejecutar dichos programas manualmente.  
 
 ### Edición de la nueva aplicación  
 
-Al editar el nuevo archivo creado por el procedimiento anterior, tenga en muy consideración las siguientes instrucciones:  
+Al editar el nuevo archivo creado por el procedimiento anterior, tenga en muy consideración las siguientes indicaciones:  
 
-1. Ingrese las instrucciones de su aplicación en la línea (escalón) libre sin completar, que encontrará bajo el siguiente comentario: es: Inicio de la aplicacion de usuario. Agregue instrucciones en el escalon vacio, y nuevas lineas (escalones) a continuacion. en: User application beginning. Add instructions into empty rung, and new lines (rungs) after it.  
+1. Ingrese las instrucciones de su aplicación en la línea (escalón) libre sin completar, que encontrará bajo el siguiente comentario: **es: Inicio de la aplicacion de usuario. Agregue instrucciones en el escalon vacio, y nuevas lineas (escalones) a continuacion. en: User application beginning. Add instructions into empty rung, and new lines (rungs) after it.**  
 2. NO MODIFIQUE la designación de entradas digitales (X0-Xn), entradas analógicas (A0-An), salidas digitales (Y0-Yn), salida PWMout, ni de los pines UART (Rx, Tx, Ydir).
 3. Para facilitar la comprensión de su aplicación, Ud. puede modificar a su elección los nombres de los relés internos que guardan los estados leídos en las entradas analógicas (Rx0-Rxn, imagen de proceso de las entradas), los estados a escribir en las salidas digitales (Ry0-Ryn, imagen de proceso de las salidas), la dirección de comunicación en el puerto RS-485 half duplex (Rdir) y eventualmente el nombre de la variable duty_cycle que controla la salida PWM.  
 4. Al desarrollar su aplicación, preste mucha atención a la consistencia en los nombres de las variables: relés internos, variables de temporizadores, contadores, etc., variables numéricas intermedias, y demás objetos programados. Recuerde que al tratar las diferentes variables, LDmicro es case-sensitive (diferencia minúsculas de mayúsculas), que los nombres de las variables NO pueden comenzar con un número, y que sólo pueden contener letras, números y el carácter subrayado (lea el Manual de LDmicro para más información sobre variables).  
