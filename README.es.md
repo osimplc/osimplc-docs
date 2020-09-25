@@ -20,7 +20,7 @@
   * [Descargas](docs/downloads.md)
   * [Manual LDmicro](docs/LDmicro_manual.md)
   * [Manual OBootLin](docs/OBootLin_manual.md)
-  * [Manual OSIMPLC-IDE](docs/es/OSIMPLC-IDE_manual.md)
+  * [Manual OSIMPLC-IDE](docs/OSIMPLC-IDE_manual.md)
 
 
 <!-- 

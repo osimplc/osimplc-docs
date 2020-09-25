@@ -16,5 +16,5 @@
   * [Manual OBootLin](OBootLin_manual.md)
   * [Manual OSIMPLC-IDE](OSIMPLC-IDE_manual.md)
 
-* [English version](http://osimplc.com/docs/en)
+* [English version](https://osimplc.com/docs/en)
 
