@@ -1,6 +1,6 @@
 # Downloads
 
-* [OSIMPLC IDE](https://github.com/osimplc/IDE/releases/download/first/OSIMPLC_IDE.zip)
+* [OSIMPLC IDE](https://github.com/osimplc/IDE/releases)
 
 ---
 
@@ -14,3 +14,7 @@
 * [OBootLin](https://github.com/osimplc/obootlin/archive/obootlin-osimplc.zip) (fork of tinybldloaderlin, by OSIMPLC)
 
 * [HMI Module Firmware](downloads/OSIMPLC_HMI_firmware.zip)
+
+---
+
+* [Gerbers and KiCAD files](https://github.com/osimplc/osimplc-kicad/releases)
